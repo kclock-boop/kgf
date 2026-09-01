@@ -61,6 +61,17 @@
 - 파일: [proposal/케이지에프_공개정보_조사메모.md](./proposal/%EC%BC%80%EC%9D%B4%EC%A7%80%EC%97%90%ED%94%84_%EA%B3%B5%EA%B0%9C%EC%A0%95%EB%B3%B4_%EC%A1%B0%EC%82%AC%EB%A9%94%EB%AA%A8.md)
 - 설명: 공식 홈페이지와 사업 참여신청서에서 확인된 범위, 현장 확인이 필요한 범위를 분리한 메모
 
+### 7) 현장업무 자동화·통합대시보드·자료실 구축계획서
+
+- PDF: [proposal/케이지에프_현장업무자동화_통합대시보드_자료실_구축계획서.pdf](./proposal/%EC%BC%80%EC%9D%B4%EC%A7%80%EC%97%90%ED%94%84_%ED%98%84%EC%9E%A5%EC%97%85%EB%AC%B4%EC%9E%90%EB%8F%99%ED%99%94_%ED%86%B5%ED%95%A9%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_%EC%9E%90%EB%A3%8C%EC%8B%A4_%EA%B5%AC%EC%B6%95%EA%B3%84%ED%9A%8D%EC%84%9C.pdf)
+- 수정본: [proposal/케이지에프_현장업무자동화_통합대시보드_자료실_구축계획서.md](./proposal/%EC%BC%80%EC%9D%B4%EC%A7%80%EC%97%90%ED%94%84_%ED%98%84%EC%9E%A5%EC%97%85%EB%AC%B4%EC%9E%90%EB%8F%99%ED%99%94_%ED%86%B5%ED%95%A9%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_%EC%9E%90%EB%A3%8C%EC%8B%A4_%EA%B5%AC%EC%B6%95%EA%B3%84%ED%9A%8D%EC%84%9C.md)
+- 설명: Level 1 진단을 반영해 공용 자료실, 품질·생산 이슈관리, 대시보드, 보고 자동화를 단계적으로 검증하는 PoC 계획서
+
+### 8) AI컨설팅 자료실
+
+- 파일: [ai-consulting-materials/README.md](./ai-consulting-materials/README.md)
+- 설명: 컨설팅 산출물의 공유용 PDF와 수정 가능한 원본을 모아두는 GitHub 자료실
+
 ## 폴더 구조
 
 - `site/`: 기업소개형 컨설팅 허브 페이지

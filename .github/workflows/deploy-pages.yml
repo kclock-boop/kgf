@@ -35,6 +35,7 @@ jobs:
           cp -r docs public/docs
           cp -r proposal public/proposal
           cp -r ppt public/ppt
+          cp -r ai-consulting-materials public/ai-consulting-materials
           cat > public/index.html <<'EOF'
           <!DOCTYPE html>
           <html lang="ko">
