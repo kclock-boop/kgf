@@ -4,6 +4,7 @@
 
 - 케이지에프 소개 홈페이지: https://kclock-boop.github.io/kgf/
 - 생산·품질 AI 운영 대시보드: https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html
+- AI컨설팅 자료실: https://kclock-boop.github.io/kgf/ai-consulting-materials/
 
 이 저장소는 2026년 9월 2일(수) 예정 `(주)케이지에프 AI 훈련컨설팅`을 위해 정리한 검토용 자료 모음입니다. 사전 수준진단 결과 `26점 / Level 1`을 반영해, AI 사용 보안과 데이터 기준을 먼저 정비한 뒤 작은 실무 과제로 검증하는 흐름으로 보완했습니다.
 
@@ -16,6 +17,8 @@
 - 허브페이지 직접열기: [https://kclock-boop.github.io/kgf/site/index.html](https://kclock-boop.github.io/kgf/site/index.html)
 - 생산·품질 AI 운영 대시보드: [docs/KGF_manufacturing_ai_dashboard.html](./docs/KGF_manufacturing_ai_dashboard.html)
 - 대시보드 직접열기: [https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html](https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html)
+- AI컨설팅 자료실: [https://kclock-boop.github.io/kgf/ai-consulting-materials/](https://kclock-boop.github.io/kgf/ai-consulting-materials/)
+- 자료실 GitHub 폴더: [ai-consulting-materials](./ai-consulting-materials/)
 - 컨설팅 구성요약: [proposal/케이지에프_AI훈련컨설팅_구성요약.md](./proposal/%EC%BC%80%EC%9D%B4%EC%A7%80%EC%97%90%ED%94%84_AI%ED%9B%88%EB%A0%A8%EC%BB%A8%EC%84%A4%ED%8C%85_%EA%B5%AC%EC%84%B1%EC%9A%94%EC%95%BD.md)
 - 발표 멘트 / 예상 Q&A: [proposal/케이지에프_AI훈련컨설팅_발표멘트_QA.md](./proposal/%EC%BC%80%EC%9D%B4%EC%A7%80%EC%97%90%ED%94%84_AI%ED%9B%88%EB%A0%A8%EC%BB%A8%EC%84%A4%ED%8C%85_%EB%B0%9C%ED%91%9C%EB%A9%98%ED%8A%B8_QA.md)
 - 회의록 반완성본: [proposal/케이지에프_AI훈련컨설팅_회의록_반완성본.md](./proposal/%EC%BC%80%EC%9D%B4%EC%A7%80%EC%97%90%ED%94%84_AI%ED%9B%88%EB%A0%A8%EC%BB%A8%EC%84%A4%ED%8C%85_%ED%9A%8C%EC%9D%98%EB%A1%9D_%EB%B0%98%EC%99%84%EC%84%B1%EB%B3%B8.md)
