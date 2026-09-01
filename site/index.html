@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KGF | 소재 제조와 품질 운영의 다음 단계를 준비하는 기업</title>
+  <meta name="description" content="(주)케이지에프의 공식 회사 정보, 제품군, R&D 방향, 생산·품질 중심 AI 훈련 포인트를 함께 정리한 컨설팅 허브 페이지입니다.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ember: "#d74f2a",
+            emberSoft: "#fff1ec",
+            graphite: "#101820",
+            slateblue: "#1f3047",
+            steel: "#31506d",
+            fog: "#eef3f7",
+            sand: "#f8f1e7",
+            teal: "#0d7b7b"
+          },
+          boxShadow: {
+            panel: "0 30px 80px rgba(16,24,32,0.12)",
+            float: "0 18px 45px rgba(16,24,32,0.10)"
+          },
+          fontFamily: {
+            sans: ["IBM Plex Sans KR", "Geist", "system-ui", "sans-serif"],
+            display: ["Geist", "IBM Plex Sans KR", "system-ui", "sans-serif"],
+            serif: ["DM Serif Display", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: #101820;
+      font-family: "IBM Plex Sans KR", "Geist", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(215,79,42,0.10), transparent 20%),
+        radial-gradient(circle at 88% 8%, rgba(13,123,123,0.10), transparent 20%),
+        linear-gradient(180deg, #fbfcfd 0%, #eef3f7 42%, #fbfcfd 100%);
+    }
+    .break-kr { word-break: keep-all; }
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.024;
+      z-index: 40;
+      background-image: radial-gradient(rgba(16,24,32,0.85) 0.6px, transparent 0.6px);
+      background-size: 16px 16px;
+    }
+    .soft-panel {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(16,24,32,0.08);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 30px 80px rgba(16,24,32,0.08);
+    }
+    .nav-shell {
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(16,24,32,0.08);
+      backdrop-filter: blur(18px);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .lift, .cta-btn, .nav-link {
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lift:hover, .cta-btn:hover {
+      transform: translateY(-4px);
+    }
+    .hero-grid::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .mobile-nav {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .mobile-nav::-webkit-scrollbar { display: none; }
+    .hero-orbit {
+      position: absolute;
+      inset: auto -70px -70px auto;
+      width: 230px;
+      height: 230px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .hero-orbit::before, .hero-orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 9999px;
+      border: 1px dashed rgba(255,255,255,0.18);
+    }
+    .hero-orbit::before {
+      inset: 24px;
+    }
+    .hero-orbit::after {
+      inset: 58px;
+    }
+    .radial-dot {
+      position: absolute;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #f7c6b8, #ffffff);
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="sticky top-0 z-50 px-4 py-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl rounded-[2rem] nav-shell px-4 py-3 shadow-float sm:rounded-full sm:px-5">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#d74f2a,#ff8c63)] text-white shadow-[0_18px_40px_rgba(215,79,42,0.34)]">
+            <span class="text-sm font-bold tracking-[0.22em]">KGF</span>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-ember">Manufacturing AI Consulting Draft</p>
+            <p class="text-sm font-semibold text-graphite">㈜케이지에프 | 기업소개 및 AI 훈련컨설팅 허브</p>
+          </div>
+        </div>
+        <nav class="hidden items-center gap-5 md:flex">
+          <a class="nav-link text-sm text-slate-600 hover:text-graphite" href="#intro">회사 소개</a>
+          <a class="nav-link text-sm text-slate-600 hover:text-graphite" href="#product">제품군</a>
+          <a class="nav-link text-sm text-slate-600 hover:text-graphite" href="#training">AI 훈련</a>
+          <a class="nav-link text-sm text-slate-600 hover:text-graphite" href="#history">연혁</a>
+          <a class="nav-link text-sm text-slate-600 hover:text-graphite" href="#archive">자료실</a>
+          <a class="nav-link text-sm text-slate-600 hover:text-graphite" href="#contact">연결</a>
+        </nav>
+      </div>
+
+      <nav class="mobile-nav mt-3 flex gap-2 overflow-x-auto pb-1 md:hidden">
+        <a class="whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700" href="#intro">회사 소개</a>
+        <a class="whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700" href="#product">제품군</a>
+        <a class="whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700" href="#training">AI 훈련</a>
+        <a class="whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700" href="#history">연혁</a>
+        <a class="whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700" href="#archive">자료실</a>
+        <a class="whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700" href="#contact">연결</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro" class="px-4 pb-16 pt-6 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl overflow-hidden rounded-[2.4rem] bg-[linear-gradient(140deg,#111d2b_0%,#1b2b3f_44%,#274762_100%)] text-white shadow-panel">
+        <div class="hero-grid relative">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(215,79,42,0.24),transparent_26%),radial-gradient(circle_at_83%_15%,rgba(255,255,255,0.08),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]"></div>
+          <div class="relative z-10 grid gap-10 px-6 py-12 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:py-16">
+            <div class="reveal break-kr">
+              <span class="inline-flex rounded-full border border-white/14 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white/90">
+                Advanced Materials · Quality Operation · AI Readiness
+              </span>
+              <h1 class="mt-6 max-w-4xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                소재 제조의 강점 위에
+                <span class="block text-[#ffc0ab]">생산·품질 AI 실행 체계</span>
+                를 얹기 좋은 케이지에프
+              </h1>
+              <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                본 페이지는 케이지에프 공식 홈페이지와 사업 참여신청서에서 확인된 정보, 그리고 2026년 9월 2일(수) 예정 현장 방문 컨설팅의 논의 포인트를 함께 정리한 검토용 허브입니다.
+              </p>
+              <p class="mt-4 max-w-2xl text-sm font-medium leading-relaxed text-white/80 sm:text-base">
+                유리섬유, 실리카섬유, 카본섬유, 필터백, 복합소재, Oxi-PAN Felt를 다루는 소재 제조기업이라는 정체성 위에서,
+                AI는 생산·품질·계획·보고를 더 정교하게 연결하는 역할로 제안합니다.
+              </p>
+
+              <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a href="../docs/KGF_manufacturing_ai_dashboard.html" class="cta-btn inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-ember px-8 py-4 text-base font-bold text-white shadow-[0_18px_38px_rgba(215,79,42,0.34)]">
+                  AI 운영 대시보드 보기
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white/16">
+                    <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
+                  </span>
+                </a>
+                <a href="#archive" class="cta-btn inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/14 bg-white/8 px-8 py-4 text-base font-bold text-white">
+                  발표 자료 구조 보기
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+                    <iconify-icon icon="solar:folder-with-files-linear" width="18"></iconify-icon>
+                  </span>
+                </a>
+              </div>
+
+              <div class="mt-10 grid gap-4 sm:grid-cols-3">
+                <div class="rounded-[1.6rem] border border-white/12 bg-white/8 p-5">
+                  <p class="text-sm text-slate-300">설립</p>
+                  <p class="mt-2 text-2xl font-bold text-white">2013.12.26</p>
+                </div>
+                <div class="rounded-[1.6rem] border border-white/12 bg-white/8 p-5">
+                  <p class="text-sm text-slate-300">본사</p>
+                  <p class="mt-2 text-xl font-bold text-white">창원시 의창구 동읍 의창대로 950</p>
+                </div>
+                <div class="rounded-[1.6rem] border border-white/12 bg-white/8 p-5">
+                  <p class="text-sm text-slate-300">현장 포커스</p>
+                  <p class="mt-2 text-2xl font-bold text-white">생산 · 품질 · 계획</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" style="transition-delay: 90ms;">
+              <div class="relative min-h-[440px] overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-7 shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
+                <div class="hero-orbit"></div>
+                <div class="radial-dot h-5 w-5" style="right: 168px; top: 72px;"></div>
+                <div class="radial-dot h-3 w-3" style="right: 88px; top: 148px;"></div>
+                <div class="radial-dot h-4 w-4" style="right: 144px; bottom: 110px;"></div>
+
+                <div class="rounded-[1.6rem] border border-white/10 bg-[rgba(255,255,255,0.08)] p-6 backdrop-blur-md">
+                  <p class="text-sm font-semibold text-[#ffd8ca]">Consulting Lens</p>
+                  <h2 class="mt-3 break-kr text-3xl font-bold leading-snug text-white">
+                    지금 케이지에프에 필요한 AI는
+                    복잡한 플랫폼보다 현장 흐름을 먼저 정리하는 도구입니다
+                  </h2>
+                  <p class="mt-4 break-kr text-sm leading-relaxed text-slate-200">
+                    사전 수준진단 결과는 26점, Level 1(AX 입문 단계)입니다. 따라서 이번 컨설팅은
+                    거창한 시스템보다 AI 사용 보안 기준, 공용 데이터 양식, 반복 문서 자동화부터
+                    생산·품질 데이터 흐름을 표준화하는 방향으로 설계했습니다.
+                  </p>
+                </div>
+
+                <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div class="rounded-[1.4rem] border border-white/10 bg-white/8 p-5">
+                    <p class="text-sm text-slate-300">집중 코칭 직무</p>
+                    <p class="mt-2 text-lg font-bold text-white">생산 부서 · 품질 부서</p>
+                  </div>
+                  <div class="rounded-[1.4rem] border border-white/10 bg-white/8 p-5">
+                    <p class="text-sm text-slate-300">보유 데이터 단서</p>
+                    <p class="mt-2 text-lg font-bold text-white">품질 데이터</p>
+                  </div>
+                  <div class="rounded-[1.4rem] border border-white/10 bg-white/8 p-5">
+                    <p class="text-sm text-slate-300">사전 수준진단</p>
+                    <p class="mt-2 text-lg font-bold text-white">26점 · Level 1</p>
+                  </div>
+                  <div class="rounded-[1.4rem] border border-white/10 bg-white/8 p-5">
+                    <p class="text-sm text-slate-300">핵심 과제</p>
+                    <p class="mt-2 text-lg font-bold text-white">업무 자동화 · 공정 최적화</p>
+                  </div>
+                  <div class="rounded-[1.4rem] border border-white/10 bg-white/8 p-5">
+                    <p class="text-sm text-slate-300">출발 조건</p>
+                    <p class="mt-2 text-lg font-bold text-white">보안 가이드 · 데이터 책임</p>
+                  </div>
+                </div>
+
+                <div class="mt-4 rounded-[1.5rem] border border-white/10 bg-[rgba(255,255,255,0.06)] p-5">
+                  <p class="text-xs font-bold uppercase tracking-[0.18em] text-white/60">Recommended Opening</p>
+                  <p class="mt-3 break-kr text-base font-medium leading-relaxed text-white">
+                    “케이지에프는 이미 제조와 품질의 기반 역량이 분명한 기업이기 때문에,
+                    AI는 새로운 일을 만드는 기술보다 기존 운영을 더 선명하게 연결하는 방식으로 시작하는 편이 좋습니다.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-10 sm:px-6 lg:px-8">
+      <div class="mx-auto mb-6 grid max-w-7xl gap-4 rounded-[2rem] bg-[linear-gradient(135deg,#fff2ec,#ffffff,#ecf7f7)] p-4 shadow-float sm:grid-cols-2 lg:grid-cols-4 lg:p-5">
+        <div class="rounded-[1.4rem] bg-white/80 p-5">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-steel">Company</p>
+          <p class="mt-2 text-lg font-bold text-graphite">소재 제조 전문성</p>
+        </div>
+        <div class="rounded-[1.4rem] bg-white/80 p-5">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-steel">Portfolio</p>
+          <p class="mt-2 text-lg font-bold text-graphite">6개 제품군 운영</p>
+        </div>
+        <div class="rounded-[1.4rem] bg-white/80 p-5">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-steel">R&D</p>
+          <p class="mt-2 text-lg font-bold text-graphite">내열·특수소재와 복합재료 개발</p>
+        </div>
+        <div class="rounded-[1.4rem] bg-white/80 p-5">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-steel">AI Theme</p>
+          <p class="mt-2 text-lg font-bold text-graphite">품질·공정·계획 자동화</p>
+        </div>
+      </div>
+
+      <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-4">
+        <div class="soft-panel reveal rounded-[1.8rem] p-6">
+          <p class="text-sm text-slate-500">대표이사</p>
+          <p class="mt-3 text-3xl font-bold text-graphite">황승국 · 황정환</p>
+          <p class="mt-2 text-sm text-slate-600">공식 홈페이지 / 신청서 기준</p>
+        </div>
+        <div class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 60ms;">
+          <p class="text-sm text-slate-500">상시근로자</p>
+          <p class="mt-3 text-3xl font-bold text-graphite">65명</p>
+          <p class="mt-2 text-sm text-slate-600">사업 참여신청서 기준</p>
+        </div>
+        <div class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 120ms;">
+          <p class="text-sm text-slate-500">AI 성숙도</p>
+          <p class="mt-3 text-3xl font-bold text-graphite">초기 단계</p>
+          <p class="mt-2 text-sm text-slate-600">자가진단 응답 합계 3개</p>
+        </div>
+        <div class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 180ms;">
+          <p class="text-sm text-slate-500">컨설팅 방향</p>
+          <p class="mt-3 text-3xl font-bold text-graphite">작게 시작</p>
+          <p class="mt-2 text-sm text-slate-600">부서 단위 MVP부터 권장</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="product" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-6 lg:grid-cols-[0.96fr_1.04fr] lg:items-start">
+          <div class="reveal break-kr">
+            <span class="inline-flex rounded-full border border-[#d9e1ea] bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-steel">Product Portfolio</span>
+            <h2 class="mt-6 text-3xl font-bold leading-tight tracking-tight text-graphite sm:text-5xl">
+              제품군이 분명한 회사는
+              데이터 질문도 분명하게 잡을 수 있습니다
+            </h2>
+            <p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
+              케이지에프 공식 홈페이지는 제품소개 구조가 분명합니다. 이 점은 AI 도입에서도 강점입니다.
+              공정, 품질, 고객 요구, 생산계획을 제품군 기준으로 나눠 볼 수 있기 때문입니다.
+            </p>
+          </div>
+
+          <div class="grid gap-4">
+            <article class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 60ms;">
+              <p class="text-sm font-semibold text-ember">Core Product 01</p>
+              <h3 class="mt-3 text-2xl font-bold text-graphite">Glass Fiber Fabric</h3>
+              <p class="mt-3 break-kr text-sm leading-relaxed text-slate-600">
+                필터용, 보온단열용, 전기절연용 등 세부 용도가 분화되어 있어 품질 항목 분류와 규격 관리 자동화 논의에 적합합니다.
+              </p>
+            </article>
+            <article class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 120ms;">
+              <p class="text-sm font-semibold text-ember">Core Product 02</p>
+              <h3 class="mt-3 text-2xl font-bold text-graphite">Silica / Carbon / Composite</h3>
+              <p class="mt-3 break-kr text-sm leading-relaxed text-slate-600">
+                내열·특수소재와 복합재료는 고객 요구사항과 시험·검증 문서가 많아, 요약과 비교 정리에 AI가 잘 맞습니다.
+              </p>
+            </article>
+            <article class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 180ms;">
+              <p class="text-sm font-semibold text-ember">Core Product 03</p>
+              <h3 class="mt-3 text-2xl font-bold text-graphite">Filter Bag / Oxi-PAN Felt</h3>
+              <p class="mt-3 break-kr text-sm leading-relaxed text-slate-600">
+                품질 기준과 납품 대응이 중요한 제품군이므로, 불량 유형 정리, 클레임 대응 초안, 납기 이슈 보고 자동화와 연결하기 좋습니다.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
+          <article class="reveal overflow-hidden rounded-[2rem] bg-[linear-gradient(140deg,#fff4ef_0%,#ffffff_54%,#eef9f9_100%)] p-8 shadow-panel">
+            <p class="text-sm font-semibold text-steel">R&D Center</p>
+            <h3 class="mt-3 break-kr text-3xl font-bold text-graphite">내열·특수소재, 복합재료, 전기전자 소재 개발 방향이 이미 선명합니다</h3>
+            <div class="mt-7 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[1.5rem] border border-white bg-white/90 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.16em] text-steel">R&D 01</p>
+                <p class="mt-2 text-lg font-bold text-graphite">내열 및 특수 소재</p>
+              </div>
+              <div class="rounded-[1.5rem] border border-white bg-white/90 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.16em] text-steel">R&D 02</p>
+                <p class="mt-2 text-lg font-bold text-graphite">복합재료 및 경량화 소재</p>
+              </div>
+              <div class="rounded-[1.5rem] border border-white bg-white/90 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.16em] text-steel">R&D 03</p>
+                <p class="mt-2 text-lg font-bold text-graphite">전기전자 절연 소재</p>
+              </div>
+              <div class="rounded-[1.5rem] border border-white bg-white/90 p-5">
+                <p class="text-xs font-bold uppercase tracking-[0.16em] text-steel">R&D 04</p>
+                <p class="mt-2 text-lg font-bold text-graphite">고성능 코팅 및 가공</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="soft-panel reveal rounded-[2rem] p-8" style="transition-delay: 100ms;">
+            <p class="text-sm font-semibold text-steel">Suggested AI Angle</p>
+            <h3 class="mt-3 break-kr text-2xl font-bold text-graphite">R&D와 생산이 함께 있는 회사는 문서·시험·보고 자동화 효과가 큽니다</h3>
+            <p class="mt-4 break-kr text-sm leading-relaxed text-slate-600">
+              기술 소개 문구가 이미 뚜렷하므로, AI는 새로운 정체성을 만드는 역할보다,
+              시험 데이터 정리, 품질 이슈 요약, 생산계획 회의자료 초안 작성, 재고/납기 커뮤니케이션 정리에 붙는 편이 더 실용적입니다.
+            </p>
+            <div class="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
+              <p class="text-sm text-slate-500">한 줄 제안</p>
+              <p class="mt-2 break-kr text-lg font-bold text-graphite">“소재 제조 강점을 해치지 않고 운영 가시성을 높이는 AI부터 시작한다.”</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="training" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
+          <article class="reveal overflow-hidden rounded-[2.2rem] bg-[linear-gradient(135deg,#111d2b_0%,#1a3041_48%,#145c63_100%)] p-8 text-white shadow-panel lg:p-10">
+            <p class="text-sm font-semibold text-[#ffe3d8]">Training Focus</p>
+            <h2 class="mt-4 break-kr text-3xl font-bold leading-tight sm:text-4xl">
+              이번 컨설팅의 핵심은
+              AI 기술 설명보다 적용 순서를 선명하게 만드는 것입니다
+            </h2>
+            <p class="mt-5 max-w-2xl break-kr text-base leading-relaxed text-slate-200">
+              자가진단표 기준으로 보면 경영진 지원 의지와 자동화 필요성은 있지만, 현장 AI 활용 구조는 아직 초기입니다.
+              따라서 전사 시스템 청사진보다, 생산과 품질 부서의 반복 업무를 묶는 `MVP 훈련 범위`부터 제안하는 편이 안전합니다.
+            </p>
+          </article>
+
+          <div class="grid gap-4">
+            <div class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 60ms;">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-steel">Priority 01</p>
+              <p class="mt-3 break-kr text-2xl font-bold text-graphite">품질 데이터 정리와 불량 분석</p>
+            </div>
+            <div class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 120ms;">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-steel">Priority 02</p>
+              <p class="mt-3 break-kr text-2xl font-bold text-graphite">생산계획과 재고 운영 가시화</p>
+            </div>
+            <div class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 180ms;">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-steel">Priority 03</p>
+              <p class="mt-3 break-kr text-2xl font-bold text-graphite">보고서와 회의자료 초안 자동화</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-4 lg:grid-cols-3">
+          <article class="soft-panel reveal rounded-[2rem] p-8">
+            <p class="text-sm font-semibold text-steel">MVP A</p>
+            <h3 class="mt-4 text-2xl font-bold text-graphite">품질 운영</h3>
+            <p class="mt-4 break-kr text-sm leading-relaxed text-slate-600">
+              불량 유형 분류, 반복 이슈 요약, 조치 이력 정리, 고객 대응 초안 작성처럼
+              품질 데이터가 이미 있는 영역부터 시작합니다.
+            </p>
+          </article>
+          <article class="soft-panel reveal rounded-[2rem] p-8" style="transition-delay: 80ms;">
+            <p class="text-sm font-semibold text-steel">MVP B</p>
+            <h3 class="mt-4 text-2xl font-bold text-graphite">생산/계획 운영</h3>
+            <p class="mt-4 break-kr text-sm leading-relaxed text-slate-600">
+              생산계획, 재고 상태, 납기 이슈, 병목 공정을 정리하는 보고 흐름에 AI를 붙이면
+              관리자 체감효과가 빠르게 나타납니다.
+            </p>
+          </article>
+          <article class="soft-panel reveal rounded-[2rem] p-8" style="transition-delay: 160ms;">
+            <p class="text-sm font-semibold text-steel">MVP C</p>
+            <h3 class="mt-4 text-2xl font-bold text-graphite">AI 리더 육성</h3>
+            <p class="mt-4 break-kr text-sm leading-relaxed text-slate-600">
+              부서별로 한 명 이상 `AI를 업무에 번역할 사람`을 세우는 것이 중요합니다.
+              툴 도입보다 먼저 실무 확산 담당자를 정하는 쪽이 효과적입니다.
+            </p>
+          </article>
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-[0.98fr_1.02fr]">
+          <article class="reveal rounded-[2rem] border border-[#d9e1ea] bg-white p-8 shadow-float">
+            <p class="text-sm font-semibold text-ember">데이터 출발점</p>
+            <h3 class="mt-3 break-kr text-3xl font-bold text-graphite">지금 단계에서는 적은 컬럼으로도 충분합니다</h3>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">일자</span>
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">제품군</span>
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">라인/공정</span>
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">불량유형</span>
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">원인분류</span>
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">조치상태</span>
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">계획대비 생산</span>
+              <span class="rounded-full bg-fog px-4 py-2 text-sm font-medium text-steel">재고상태</span>
+            </div>
+          </article>
+
+          <article class="soft-panel reveal rounded-[2rem] p-8" style="transition-delay: 100ms;">
+            <p class="text-sm font-semibold text-steel">Meeting Prompt</p>
+            <h3 class="mt-3 break-kr text-3xl font-bold text-graphite">회의에서 바로 물어볼 질문</h3>
+            <div class="mt-6 grid gap-4">
+              <div class="rounded-[1.4rem] border border-slate-200 bg-white p-5">
+                <p class="text-sm text-slate-500">질문 1</p>
+                <p class="mt-2 text-lg font-bold text-graphite">불량 데이터는 현재 어떤 형식으로 모이고 있나요?</p>
+              </div>
+              <div class="rounded-[1.4rem] border border-slate-200 bg-white p-5">
+                <p class="text-sm text-slate-500">질문 2</p>
+                <p class="mt-2 text-lg font-bold text-graphite">생산계획 변경이나 재고 이슈는 누가 어떤 보고서로 정리하나요?</p>
+              </div>
+              <div class="rounded-[1.4rem] border border-slate-200 bg-white p-5">
+                <p class="text-sm text-slate-500">질문 3</p>
+                <p class="mt-2 text-lg font-bold text-graphite">실무자가 가장 자주 반복해서 쓰는 문서나 메일은 무엇인가요?</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="history" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <div class="reveal break-kr">
+            <span class="inline-flex rounded-full border border-[#d9e1ea] bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-steel">History</span>
+            <h2 class="mt-6 text-3xl font-bold leading-tight tracking-tight text-graphite sm:text-5xl">
+              공식 홈페이지 기준으로
+              설명 가능한 연혁 축을 먼저 정리했습니다
+            </h2>
+            <p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
+              케이지에프 자체 설립일은 2013년 12월 26일이며, 공식 연혁에는 1970년부터 이어지는 전신 사업 흐름도 함께 보입니다.
+              소개 페이지에서는 현재 법인과 사업의 연속성을 함께 읽히도록 정리하는 편이 좋습니다.
+            </p>
+          </div>
+
+          <div class="grid gap-4">
+            <article class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 60ms;">
+              <p class="text-sm font-semibold text-ember">2020.05</p>
+              <h3 class="mt-3 text-xl font-bold text-graphite">전주공장 준공</h3>
+              <p class="mt-3 break-kr text-sm leading-relaxed text-slate-600">
+                생산 거점 확장 이력을 AI 운영 논의와 연결하면 공장/라인별 데이터 관리 질문으로 자연스럽게 이어질 수 있습니다.
+              </p>
+            </article>
+            <article class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 120ms;">
+              <p class="text-sm font-semibold text-ember">2018.08</p>
+              <h3 class="mt-3 text-xl font-bold text-graphite">중국 법인 KGF(Jiangsu) New Material Technology Co., Ltd. 설립</h3>
+              <p class="mt-3 break-kr text-sm leading-relaxed text-slate-600">
+                해외 거점과 신소재 사업 흐름은 향후 글로벌 품질 문서 정리와 번역 자동화 논의의 단서가 될 수 있습니다.
+              </p>
+            </article>
+            <article class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 180ms;">
+              <p class="text-sm font-semibold text-ember">2013.12</p>
+              <h3 class="mt-3 text-xl font-bold text-graphite">㈜케이피아이 유리섬유 사업부 분할, ㈜케이지에프 설립</h3>
+              <p class="mt-3 break-kr text-sm leading-relaxed text-slate-600">
+                현재 법인의 출발점으로, 이번 컨설팅 자료에서 가장 명확하게 소개할 수 있는 기준 시점입니다.
+              </p>
+            </article>
+            <article class="soft-panel reveal rounded-[1.8rem] p-6" style="transition-delay: 240ms;">
+              <p class="text-sm font-semibold text-ember">1970~2003</p>
+              <h3 class="mt-3 text-xl font-bold text-graphite">전신 사업의 축적 구간</h3>
+              <p class="mt-3 break-kr text-sm leading-relaxed text-slate-600">
+                강남산업, 복합소재 제직 및 프리프레그 사업, 창원공장 준공, 중국법인 설립 등은 사업 기반의 깊이를 보여주는 참고 축으로 활용 가능합니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="archive" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal break-kr">
+          <span class="inline-flex rounded-full border border-[#d9e1ea] bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-steel">Archive</span>
+          <h2 class="mt-6 max-w-4xl font-display text-3xl font-bold leading-tight tracking-tight text-graphite sm:text-5xl">
+            설명과 자료가 바로 연결되는 컨설팅 허브
+          </h2>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
+          <article class="soft-panel reveal rounded-[2rem] p-8">
+            <p class="text-sm font-semibold text-steel">Open Resources</p>
+            <h3 class="mt-3 break-kr text-3xl font-bold text-graphite">내일 미팅에서 바로 열어볼 수 있는 자료</h3>
+            <div class="mt-8 grid gap-4">
+              <a href="../docs/KGF_manufacturing_ai_dashboard.html" class="lift flex items-center justify-between gap-4 rounded-[1.5rem] border border-slate-200 bg-white p-5">
+                <div>
+                  <p class="text-sm text-slate-500">Dashboard</p>
+                  <p class="mt-2 text-lg font-bold text-graphite">생산·품질 AI 운영 대시보드</p>
+                </div>
+                <iconify-icon icon="solar:monitor-smartphone-linear" width="24" class="text-ember"></iconify-icon>
+              </a>
+              <a href="../proposal/케이지에프_AI훈련컨설팅_구성요약.md" class="lift flex items-center justify-between gap-4 rounded-[1.5rem] border border-slate-200 bg-white p-5">
+                <div>
+                  <p class="text-sm text-slate-500">Proposal</p>
+                  <p class="mt-2 text-lg font-bold text-graphite">컨설팅 구성요약</p>
+                </div>
+                <iconify-icon icon="solar:document-linear" width="24" class="text-ember"></iconify-icon>
+              </a>
+              <a href="../proposal/케이지에프_AI훈련컨설팅_발표멘트_QA.md" class="lift flex items-center justify-between gap-4 rounded-[1.5rem] border border-slate-200 bg-white p-5">
+                <div>
+                  <p class="text-sm text-slate-500">Script</p>
+                  <p class="mt-2 text-lg font-bold text-graphite">발표 멘트 / 예상 Q&A</p>
+                </div>
+                <iconify-icon icon="solar:chat-round-line-line-duotone" width="24" class="text-ember"></iconify-icon>
+              </a>
+            </div>
+          </article>
+
+          <article class="reveal overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#fff6f2_0%,#ffffff_50%,#f0faf9_100%)] p-8 shadow-panel" style="transition-delay: 90ms;">
+            <p class="text-sm font-semibold text-steel">Next Expansion</p>
+            <h3 class="mt-3 break-kr text-3xl font-bold text-graphite">공식 내부 자료가 오면 빠르게 고도화할 수 있는 구조로 만들었습니다</h3>
+            <div class="mt-7 grid gap-4">
+              <div class="rounded-[1.4rem] border border-white bg-white/80 p-5">
+                <p class="text-sm text-slate-500">추가 추천 항목</p>
+                <p class="mt-2 text-lg font-bold text-graphite">라인별 품질 데이터, 생산계획 양식, 재고 현황표, 시험성적서 예시</p>
+              </div>
+              <div class="rounded-[1.4rem] border border-white bg-white/80 p-5">
+                <p class="text-sm text-slate-500">권장 보완 방식</p>
+                <p class="mt-2 text-lg font-bold text-graphite">현재 구조는 유지하고 문구와 샘플 지표만 현장 데이터로 교체</p>
+              </div>
+              <div class="rounded-[1.4rem] border border-white bg-white/80 p-5">
+                <p class="text-sm text-slate-500">후속 활용</p>
+                <p class="mt-2 text-lg font-bold text-graphite">PoC 제안, 부서별 교육안, 보고 자동화 시범 화면으로 확장</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal overflow-hidden rounded-[2.2rem] bg-[linear-gradient(135deg,#141c27,#1d2e43,#155b62)] p-8 text-white shadow-panel lg:p-10">
+          <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
+            <div class="break-kr">
+              <span class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white">Contact & Link</span>
+              <h2 class="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+                지금은 컨설팅 허브이지만
+                정식 회사소개 페이지로도 확장 가능한 구조입니다
+              </h2>
+              <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                현재 페이지는 2026년 9월 2일(수) 현장 방문 컨설팅을 위한 검토 초안입니다.
+                다만 기업 개요, 제품군, 연혁, 자료 연결 흐름을 이미 갖추고 있어 향후 대외 소개형 페이지로 발전시키기 쉽습니다.
+              </p>
+              <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a href="http://www.kgf.co.kr/" class="cta-btn inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-base font-bold text-graphite">
+                  공식 홈페이지 보기
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-graphite text-white">
+                    <iconify-icon icon="solar:global-linear" width="18"></iconify-icon>
+                  </span>
+                </a>
+                <a href="https://github.com/kclock-boop/kgf" class="cta-btn inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/16 bg-white/8 px-8 py-4 text-base font-bold text-white">
+                  GitHub 저장소 보기
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white">
+                    <iconify-icon icon="solar:link-round-angle-linear" width="18"></iconify-icon>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="grid gap-4">
+              <div class="rounded-[1.7rem] border border-white/12 bg-white/10 p-6">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300">Official Info</p>
+                <p class="mt-3 text-xl font-bold text-white">경상남도 창원시 의창구 동읍 의창대로 950</p>
+                <p class="mt-3 break-kr text-sm leading-relaxed text-slate-200">
+                  공식 홈페이지와 신청서에 공통으로 확인된 주소입니다.
+                  대표 연락처는 공식 홈페이지 하단 기준 `055-291-3181`입니다.
+                </p>
+              </div>
+              <div class="rounded-[1.7rem] border border-white/12 bg-white/10 p-6">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300">Recommended Fields</p>
+                <p class="mt-3 text-lg font-bold text-white">회사명 · 제품군 · R&D 방향 · 문의 채널 · 데이터 협업 범위</p>
+              </div>
+              <div class="rounded-[1.7rem] border border-white/12 bg-white/10 p-6">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300">Current Use</p>
+                <p class="mt-3 text-lg font-bold text-white">컨설팅 소개, 내부 검토, 담당자 공유, PoC 논의 출발점</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="px-4 pb-10 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-5 border-t border-slate-200 pt-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="font-semibold text-graphite">케이지에프 기업소개 및 AI 훈련컨설팅 허브</p>
+        <p class="mt-1 break-kr">소재 제조, 품질 운영, R&D 확장성, 생산·품질 AI 실행 포인트를 함께 정리한 버전</p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a class="nav-link hover:text-graphite" href="#intro">회사 소개</a>
+        <a class="nav-link hover:text-graphite" href="#product">제품군</a>
+        <a class="nav-link hover:text-graphite" href="#training">AI 훈련</a>
+        <a class="nav-link hover:text-graphite" href="#history">연혁</a>
+        <a class="nav-link hover:text-graphite" href="#archive">자료실</a>
+        <a class="nav-link hover:text-graphite" href="#contact">연결</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>

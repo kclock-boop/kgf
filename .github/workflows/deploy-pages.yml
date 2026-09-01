@@ -1,0 +1,60 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build static bundle
+        run: |
+          mkdir -p public
+          cp -r site public/site
+          cp README.md public/README.md
+          cp -r docs public/docs
+          cp -r proposal public/proposal
+          cp -r ppt public/ppt
+          cat > public/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="ko">
+          <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="refresh" content="0; url=./site/index.html" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>케이지에프 | AI 훈련컨설팅</title>
+          </head>
+          <body>
+            <p><a href="./site/index.html">케이지에프 AI 훈련컨설팅 페이지로 이동</a></p>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

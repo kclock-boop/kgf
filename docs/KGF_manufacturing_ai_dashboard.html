@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KGF 생산·품질 AI 운영 대시보드 시안</title>
+  <meta name="description" content="케이지에프 생산·품질 부서 중심의 AI 훈련 및 운영 가시화 시안입니다.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "IBM Plex Sans KR", "Geist", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(215,79,42,0.08), transparent 20%),
+        radial-gradient(circle at top right, rgba(13,123,123,0.08), transparent 20%),
+        linear-gradient(180deg, #f7fafc 0%, #edf3f8 100%);
+      color: #10202f;
+    }
+    .panel {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(16,32,47,0.08);
+      box-shadow: 0 24px 70px rgba(16,32,47,0.08);
+    }
+    .break-kr { word-break: keep-all; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <header class="panel overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#121c28_0%,#1d3045_48%,#145d64_100%)] p-8 text-white">
+      <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[#ffd4c5]">KGF Manufacturing AI Dashboard Draft</p>
+          <h1 class="mt-4 break-kr text-3xl font-bold leading-tight sm:text-5xl">
+            생산·품질 데이터를
+            <span class="block text-[#bff6f0]">“질문 가능한 운영 정보”</span>
+            로 바꾸기 위한 첫 화면
+          </h1>
+          <p class="mt-5 max-w-3xl break-kr text-base leading-relaxed text-slate-200">
+            이 화면은 완성 시스템이 아니라, 케이지에프 AI 훈련컨설팅에서
+            생산·품질·계획·재고·교육 데이터를 어떤 구조로 먼저 볼지 설명하기 위한 시안입니다.
+            사전진단 26점, Level 1 기준으로 실제 운영 수치가 아닌 훈련·파일럿 설계용 화면입니다.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-[1.5rem] border border-white/12 bg-white/10 p-5">
+            <p class="text-sm text-slate-300">집중 부서</p>
+            <p class="mt-2 text-xl font-bold text-white">생산 · 품질</p>
+          </div>
+          <div class="rounded-[1.5rem] border border-white/12 bg-white/10 p-5">
+            <p class="text-sm text-slate-300">핵심 과제</p>
+            <p class="mt-2 text-xl font-bold text-white">자동화 · 최적화</p>
+          </div>
+          <div class="rounded-[1.5rem] border border-white/12 bg-white/10 p-5">
+            <p class="text-sm text-slate-300">사전 수준진단</p>
+            <p class="mt-2 text-xl font-bold text-white">26점 · Level 1</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <article class="panel rounded-[1.8rem] p-6">
+        <p class="text-sm text-slate-500">사전 수준진단</p>
+        <p class="mt-3 text-4xl font-bold text-[#d74f2a]">26점</p>
+        <p class="mt-2 text-sm text-slate-600">Level 1: AX 입문 및 보안 체계 정비 우선</p>
+      </article>
+      <article class="panel rounded-[1.8rem] p-6">
+        <p class="text-sm text-slate-500">반복 불량 Top 3</p>
+        <p class="mt-3 text-3xl font-bold text-[#10202f]">직조 편차 · 표면 결함 · 규격 이탈</p>
+        <p class="mt-2 text-sm text-slate-600">실제 현장 데이터 수집 후 제품군 기준으로 재정렬 권장</p>
+      </article>
+      <article class="panel rounded-[1.8rem] p-6">
+        <p class="text-sm text-slate-500">계획 대비 생산</p>
+        <p class="mt-3 text-4xl font-bold text-[#145d64]">91%</p>
+        <p class="mt-2 text-sm text-slate-600">부족 라인/공정을 빠르게 보는 지표 예시</p>
+      </article>
+      <article class="panel rounded-[1.8rem] p-6">
+        <p class="text-sm text-slate-500">1차 AI 업무 적용 후보</p>
+        <p class="mt-3 text-3xl font-bold text-[#10202f]">보고 요약 · 품질 이슈 분류 · 계획 회의자료</p>
+        <p class="mt-2 text-sm text-slate-600">보안 가이드와 공용 양식을 먼저 적용한 뒤 시작</p>
+      </article>
+    </section>
+
+    <section class="mt-8 panel rounded-[2rem] p-7">
+      <p class="text-sm font-semibold text-[#145d64]">Level 1 실행 원칙</p>
+      <h2 class="mt-2 text-2xl font-bold text-[#10202f]">데이터를 모으기 전에 사용 기준부터 맞춥니다</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-[1.4rem] bg-slate-50 p-5">
+          <p class="text-sm text-slate-500">1. AI 보안</p>
+          <p class="mt-2 text-lg font-bold text-[#10202f]">민감정보 입력 금지와 결과 검토 책임을 정합니다.</p>
+        </div>
+        <div class="rounded-[1.4rem] bg-slate-50 p-5">
+          <p class="text-sm text-slate-500">2. 공용 양식</p>
+          <p class="mt-2 text-lg font-bold text-[#10202f]">누가, 언제, 어떤 데이터를 입력·검토하는지 맞춥니다.</p>
+        </div>
+        <div class="rounded-[1.4rem] bg-slate-50 p-5">
+          <p class="text-sm text-slate-500">3. 작은 실습</p>
+          <p class="mt-2 text-lg font-bold text-[#10202f]">보고서·회의자료처럼 검증 가능한 업무부터 적용합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <article class="panel rounded-[2rem] p-7">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold text-[#145d64]">품질 운영</p>
+            <h2 class="mt-2 text-2xl font-bold text-[#10202f]">불량 유형과 조치상태를 먼저 표준화</h2>
+          </div>
+          <span class="rounded-full bg-[#fff1ec] px-4 py-2 text-sm font-semibold text-[#d74f2a]">MVP 1</span>
+        </div>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-[1.4rem] bg-slate-50 p-5">
+            <p class="text-sm text-slate-500">확인 질문</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">어떤 불량이 가장 자주 반복되는가?</p>
+          </div>
+          <div class="rounded-[1.4rem] bg-slate-50 p-5">
+            <p class="text-sm text-slate-500">확인 질문</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">조치 완료까지 얼마나 걸리는가?</p>
+          </div>
+          <div class="rounded-[1.4rem] bg-slate-50 p-5">
+            <p class="text-sm text-slate-500">추천 컬럼</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">제품군 · 라인 · 불량유형 · 원인 · 조치상태</p>
+          </div>
+          <div class="rounded-[1.4rem] bg-slate-50 p-5">
+            <p class="text-sm text-slate-500">AI 적용 예시</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">주간 품질회의 요약 초안</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel rounded-[2rem] p-7">
+        <p class="text-sm font-semibold text-[#145d64]">예시 상태</p>
+        <h2 class="mt-2 text-2xl font-bold text-[#10202f]">이번 주 집중 모니터링 지표</h2>
+        <div class="mt-6 space-y-5">
+          <div>
+            <div class="mb-2 flex items-center justify-between text-sm">
+              <span>불량 재발 억제</span>
+              <span class="font-semibold text-[#10202f]">68%</span>
+            </div>
+            <div class="h-3 rounded-full bg-slate-100">
+              <div class="h-3 rounded-full bg-[#d74f2a]" style="width:68%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-2 flex items-center justify-between text-sm">
+              <span>시정조치 마감 준수</span>
+              <span class="font-semibold text-[#10202f]">74%</span>
+            </div>
+            <div class="h-3 rounded-full bg-slate-100">
+              <div class="h-3 rounded-full bg-[#145d64]" style="width:74%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-2 flex items-center justify-between text-sm">
+              <span>라인별 보고 적시성</span>
+              <span class="font-semibold text-[#10202f]">83%</span>
+            </div>
+            <div class="h-3 rounded-full bg-slate-100">
+              <div class="h-3 rounded-full bg-[#31506d]" style="width:83%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-2 flex items-center justify-between text-sm">
+              <span>교육 후 현장 적용</span>
+              <span class="font-semibold text-[#10202f]">52%</span>
+            </div>
+            <div class="h-3 rounded-full bg-slate-100">
+              <div class="h-3 rounded-full bg-[#0f766e]" style="width:52%"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="mt-8 grid gap-6 lg:grid-cols-3">
+      <article class="panel rounded-[2rem] p-7">
+        <p class="text-sm font-semibold text-[#145d64]">생산계획</p>
+        <h3 class="mt-3 text-2xl font-bold text-[#10202f]">계획 대비 실적</h3>
+        <div class="mt-5 space-y-4">
+          <div class="rounded-[1.3rem] bg-slate-50 p-4">
+            <div class="flex items-center justify-between text-sm">
+              <span>Glass Fiber</span>
+              <span class="font-semibold">94%</span>
+            </div>
+          </div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4">
+            <div class="flex items-center justify-between text-sm">
+              <span>Silica Fiber</span>
+              <span class="font-semibold">89%</span>
+            </div>
+          </div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4">
+            <div class="flex items-center justify-between text-sm">
+              <span>Composite</span>
+              <span class="font-semibold">86%</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel rounded-[2rem] p-7">
+        <p class="text-sm font-semibold text-[#145d64]">재고 관리</p>
+        <h3 class="mt-3 text-2xl font-bold text-[#10202f]">재고 경보 포인트</h3>
+        <div class="mt-5 grid gap-3">
+          <div class="rounded-[1.3rem] border border-[#ffd7ca] bg-[#fff5f1] p-4">
+            <p class="text-sm text-slate-500">원재료 A</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">안전재고 아래</p>
+          </div>
+          <div class="rounded-[1.3rem] border border-[#d6eceb] bg-[#f1fbfa] p-4">
+            <p class="text-sm text-slate-500">완제품 B</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">적정 범위</p>
+          </div>
+          <div class="rounded-[1.3rem] border border-slate-200 bg-slate-50 p-4">
+            <p class="text-sm text-slate-500">납기 리스크 품목</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">2건 예시</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel rounded-[2rem] p-7">
+        <p class="text-sm font-semibold text-[#145d64]">AI 훈련 확산</p>
+        <h3 class="mt-3 text-2xl font-bold text-[#10202f]">실무 적용 루프</h3>
+        <div class="mt-5 space-y-3">
+          <div class="rounded-[1.3rem] bg-slate-50 p-4">
+            <p class="text-sm text-slate-500">1주차</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">현행 양식 수집</p>
+          </div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4">
+            <p class="text-sm text-slate-500">2~3주차</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">품질/계획 샘플 데이터 정리</p>
+          </div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4">
+            <p class="text-sm text-slate-500">4주차 이후</p>
+            <p class="mt-2 text-lg font-bold text-[#10202f]">보고 자동화 PoC</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="mt-8 grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
+      <article class="panel rounded-[2rem] p-7">
+        <p class="text-sm font-semibold text-[#145d64]">회의 중 확인할 데이터</p>
+        <h2 class="mt-2 text-2xl font-bold text-[#10202f]">샘플 데이터 요청 목록</h2>
+        <div class="mt-6 grid gap-3 md:grid-cols-2">
+          <div class="rounded-[1.3rem] bg-slate-50 p-4 text-sm font-medium text-[#10202f]">불량 이력표</div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4 text-sm font-medium text-[#10202f]">시정조치 관리표</div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4 text-sm font-medium text-[#10202f]">생산계획표</div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4 text-sm font-medium text-[#10202f]">재고 현황표</div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4 text-sm font-medium text-[#10202f]">시험/검사 결과 양식</div>
+          <div class="rounded-[1.3rem] bg-slate-50 p-4 text-sm font-medium text-[#10202f]">주간 보고 또는 회의자료</div>
+        </div>
+      </article>
+
+      <article class="panel rounded-[2rem] p-7">
+        <p class="text-sm font-semibold text-[#145d64]">한 줄 정리</p>
+        <h2 class="mt-2 text-2xl font-bold text-[#10202f]">케이지에프에 맞는 첫 AI 적용</h2>
+        <p class="mt-5 break-kr text-base leading-relaxed text-slate-600">
+          “생산과 품질이 이미 굴러가고 있는 회사를 전사 시스템으로 바로 바꾸려 하지 말고,
+          반복 문서와 품질 이슈, 계획 회의자료부터 AI로 가볍게 줄여보자.”
+        </p>
+        <div class="mt-6 rounded-[1.5rem] bg-[linear-gradient(135deg,#fff1ec,#f1fbfa)] p-5">
+          <p class="text-sm text-slate-500">활용 방식</p>
+          <p class="mt-2 text-lg font-bold text-[#10202f]">대표 보고용 · 관리자 대화용 · 교육 설계용 화면</p>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
