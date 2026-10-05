@@ -88,6 +88,15 @@
     .hero-panel { padding: 22px; border: 1px solid rgba(255,255,255,.18); border-radius: 20px; background: rgba(255,255,255,.10); backdrop-filter: blur(10px); }
     .hero-panel strong { display: block; margin-top: 9px; font-size: 21px; word-break: keep-all; }
     .hero-panel p { margin-top: 8px; font-size: 12px; line-height: 1.55; }
+    .presentation-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 16px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.86); box-shadow: 0 8px 18px rgba(14,45,61,.04); }
+    .presentation-nav strong { flex: 0 0 auto; color: var(--kgf-red); font-size: 12px; }
+    .presentation-links { display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; }
+    .presentation-links a { padding: 7px 10px; border-radius: 99px; color: #49616b; background: #f1f6f3; font-size: 11px; font-weight: 700; text-decoration: none; }
+    .presentation-links a:hover { color: white; background: var(--kgf-green); }
+    .view-control { display: flex; gap: 7px; }
+    .view-toggle { padding: 8px 11px; border: 1px solid #cbd9d2; border-radius: 9px; color: #4d6570; background: white; cursor: pointer; font-size: 11px; font-weight: 700; }
+    .view-toggle.active { color: white; border-color: var(--kgf-green); background: var(--kgf-green); }
+    body[data-view="core"] .detail-section { display: none; }
     .section { margin-top: 28px; }
     .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .metric { position: relative; min-height: 152px; padding: 20px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.84); box-shadow: 0 8px 20px rgba(14, 45, 61, .04); }
@@ -336,6 +345,9 @@
       .learning-path, .outcome-band { grid-template-columns: 1fr; }
       .roadmap-item { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
       .roadmap-item:last-child { border-bottom: 0; }
+      .presentation-nav { display: block; }
+      .presentation-links { justify-content: flex-start; margin-top: 10px; }
+      .view-control { margin-top: 10px; }
     }
     @media (max-width: 600px) {
       .shell { width: min(100% - 20px, 1180px); }
@@ -365,7 +377,7 @@
     }
   </style>
 </head>
-<body>
+<body data-view="core">
   <main class="shell">
     <header class="topbar">
       <a class="brand" href="../site/index.html">
@@ -389,6 +401,12 @@
         </aside>
       </div>
     </section>
+
+    <nav class="presentation-nav" aria-label="발표 순서">
+      <strong>발표 흐름</strong>
+      <div class="presentation-links"><a href="#case-title">우수사례</a><a href="#selected-task-title">4대 과업</a><a href="#management-title">경영지원부</a><a href="#roadmap-title">90일 실행</a><a href="#learning-title">훈련체계</a><a href="#outcome-title">성과 목표</a></div>
+      <div class="view-control"><button class="view-toggle active" data-view-mode="core" type="button">핵심 발표 보기</button><button class="view-toggle" data-view-mode="full" type="button">전체 상세 보기</button></div>
+    </nav>
 
     <section class="section kpi-grid" aria-label="핵심 현황">
       <article class="metric"><span class="metric-label">업무용 AI 기반</span><strong>34</strong><p class="caption">GPT Business 도입 계정</p></article>
@@ -434,7 +452,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="priority-title">
+    <section class="section detail-section" aria-labelledby="priority-title">
       <div class="section-head"><div><span class="eyebrow">Priority navigator</span><h2 id="priority-title">무엇부터 할 것인가</h2></div><p>버튼을 눌러 우선순위별 착수 조건을 확인하세요.</p></div>
       <div class="priority-wrap">
         <div class="priority-tabs" role="tablist" aria-label="우선순위">
@@ -446,7 +464,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="visual-title">
+    <section class="section detail-section" aria-labelledby="visual-title">
       <div class="section-head"><div><span class="eyebrow">Visual decision map</span><h2 id="visual-title">한 장으로 설명하는 전환 구조</h2></div><p>현장 데이터가 쌓이는 순서와 첫 PoC 선택 기준을 함께 봅니다.</p></div>
       <div class="visual-grid">
         <article class="visual-panel">
@@ -476,7 +494,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="poc-title">
+    <section class="section detail-section" aria-labelledby="poc-title">
       <div class="section-head"><div><span class="eyebrow">P1 PoC decision graph</span><h2 id="poc-title">첫 PoC는 둘 중 하나를 선택합니다</h2></div><p>점수는 실제 평가값이 아니라, 현장 확인을 위한 준비도 항목입니다.</p></div>
       <div class="visual-grid">
         <article class="visual-panel">
@@ -492,7 +510,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="agent-title">
+    <section class="section detail-section" aria-labelledby="agent-title">
       <div class="section-head"><div><span class="eyebrow">POC automation agent</span><h2 id="agent-title">현장 문제를 PoC로 바꾸는 업무자동화 에이전트</h2></div><p>신청서의 생산·품질 중심 과제와 보유 품질 데이터를 바탕으로 설계합니다.</p></div>
       <div class="agent-shell">
         <article class="agent-form">
@@ -517,7 +535,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="dept-title">
+    <section class="section detail-section" aria-labelledby="dept-title">
       <div class="section-head"><div><span class="eyebrow">Department lens</span><h2 id="dept-title">부서별로 남겨야 할 첫 산출물</h2></div><p>카드를 눌러 현장 인터뷰 질문과 초기 KPI를 확인하세요.</p></div>
       <div class="dept-grid">
         <article class="dept" data-no="01"><span class="dept-icon">MGT</span><h3>경영지원</h3><p>반복 문서·회의·실적 자료를 표준화하고, GPT Business 활용 기준을 만든다.</p><button data-dept="management">컨설팅 포인트 보기 →</button></article>
@@ -704,6 +722,12 @@
     document.getElementById("close-training-dialog").addEventListener("click", () => trainingDialog.close());
     trainingDialog.addEventListener("click", (event) => { if (event.target === trainingDialog) trainingDialog.close(); });
 
+    const setDashboardView = (mode) => {
+      document.body.dataset.view = mode;
+      document.querySelectorAll("[data-view-mode]").forEach((button) => button.classList.toggle("active", button.dataset.viewMode === mode));
+    };
+    document.querySelectorAll("[data-view-mode]").forEach((button) => button.addEventListener("click", () => setDashboardView(button.dataset.viewMode)));
+
     const pocAgents = {
       management: {
         title: "경영지원 인사·문서·회계·메일·복무 PoC", summary: "PM이 반복되는 요청·문서·증빙 업무를 표준화하고, 담당자·기한·검토 상태를 한 화면에서 확인하는 경영지원 업무자동화 실습입니다.",
@@ -808,6 +832,7 @@
     });
     document.getElementById("build-agent").addEventListener("click", renderAgent);
     document.getElementById("launch-management-agent").addEventListener("click", () => {
+      setDashboardView("full");
       agentArea.value = "management";
       agentData.value = "익명화된 근태·휴가 요청, 회의록·보고서, 증빙 요청, 메일·부서 요청 이력";
       agentGoal.value = "반복 문서·메일·복무 업무 자동화와 요청 누락 감소";
