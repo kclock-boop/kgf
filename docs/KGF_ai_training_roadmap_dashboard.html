@@ -167,6 +167,31 @@
     .visual-panel:nth-child(2) .criterion-meter i { background: repeating-linear-gradient(90deg, #df1725 0 12px, transparent 12px 17px); }
     .criterion-meter.pending i { width: 48%; background: repeating-linear-gradient(90deg, #e5a849 0 12px, transparent 12px 17px); }
     .criterion-meter.short i { width: 35%; background: repeating-linear-gradient(90deg, #d5dee1 0 12px, transparent 12px 17px); }
+    .agent-shell { display: grid; grid-template-columns: .85fr 1.15fr; gap: 14px; padding: 14px; border: 1px solid #cfded8; border-radius: 26px; background: linear-gradient(135deg, #f3faf5, #f8fbf7 48%, #fff6f6); }
+    .agent-form, .agent-result { padding: 24px; border-radius: 18px; background: white; }
+    .agent-form h3, .agent-result h3 { margin: 8px 0 0; font-size: 21px; word-break: keep-all; }
+    .agent-form > p, .agent-result > p { margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; word-break: keep-all; }
+    .agent-field { display: block; margin-top: 15px; }
+    .agent-field span { display: block; margin-bottom: 7px; color: #415e6a; font-size: 11px; font-weight: 700; }
+    .agent-field select, .agent-field input { width: 100%; padding: 12px; border: 1px solid #d6e1dd; border-radius: 10px; outline: none; color: var(--ink); background: #fbfdfc; font: 13px "IBM Plex Sans KR", sans-serif; }
+    .agent-field select:focus, .agent-field input:focus { border-color: var(--kgf-green); box-shadow: 0 0 0 3px rgba(28,128,59,.11); }
+    .agent-build { width: 100%; margin-top: 18px; padding: 13px; border: 0; border-radius: 11px; color: white; background: linear-gradient(90deg, var(--kgf-green), #2a9c55); cursor: pointer; font-weight: 700; transition: transform .2s ease, box-shadow .2s ease; }
+    .agent-build:hover { transform: translateY(-2px); box-shadow: 0 9px 18px rgba(28,128,59,.22); }
+    .agent-banner { display: flex; align-items: center; gap: 9px; margin-top: 18px; padding: 10px 12px; border-left: 4px solid var(--kgf-red); border-radius: 8px; color: #5c4c4f; background: #fff4f4; font-size: 11px; line-height: 1.55; word-break: keep-all; }
+    .agent-plan { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 18px; }
+    .agent-step { min-height: 120px; padding: 12px; border-radius: 13px; color: #28454e; background: #f2f7f4; }
+    .agent-step:nth-child(2) { background: #edf7ed; }
+    .agent-step:nth-child(3) { background: #fff0f1; }
+    .agent-step:nth-child(4) { background: #f2f7df; }
+    .agent-step b { display: block; color: var(--kgf-red); font: 700 10px "DM Mono", monospace; }
+    .agent-step:nth-child(2) b { color: var(--kgf-green); }
+    .agent-step:nth-child(3) b { color: var(--kgf-red); }
+    .agent-step:nth-child(4) b { color: #5f8e11; }
+    .agent-step strong { display: block; margin-top: 9px; font-size: 12px; line-height: 1.45; word-break: keep-all; }
+    .agent-output { width: 100%; min-height: 154px; margin-top: 14px; padding: 13px; resize: vertical; border: 1px solid #d7e2de; border-radius: 12px; color: #39545e; background: #fbfdfc; font: 11px/1.6 "IBM Plex Sans KR", sans-serif; }
+    .agent-actions { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-top: 10px; }
+    .agent-actions span { color: var(--muted); font-size: 11px; }
+    .copy-agent { padding: 9px 12px; border: 1px solid var(--kgf-green); border-radius: 9px; color: var(--kgf-green); background: white; cursor: pointer; font-size: 12px; font-weight: 700; }
     .dept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .dept { position: relative; min-height: 270px; padding: 22px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: white; transition: transform .25s ease, box-shadow .25s ease; }
     .dept:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
@@ -249,7 +274,7 @@
     .curriculum-table td:first-child { width: 27%; color: var(--ink); font-weight: 700; background: #f5f9f6; }
     .curriculum-table td:last-child { color: var(--kgf-red); font: 700 12px "DM Mono", monospace; }
     @media (max-width: 900px) {
-      .hero-grid, .priority-wrap, .bottom-grid, .visual-grid { grid-template-columns: 1fr; }
+      .hero-grid, .priority-wrap, .bottom-grid, .visual-grid, .agent-shell { grid-template-columns: 1fr; }
       .kpi-grid, .dept-grid, .task-grid { grid-template-columns: repeat(2, 1fr); }
       .priority-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .priority-tab { margin: 0; }
@@ -270,8 +295,10 @@
       .stage h4 { margin: 0; }
       .stage p { margin: 6px 0 0; max-width: none; }
       .priority-tabs { grid-template-columns: 1fr; }
+      .agent-plan { grid-template-columns: repeat(2, 1fr); }
       .priority-top, .section-head { display: block; }
       .section-head p { margin-top: 9px; text-align: left; }
+      .agent-plan { grid-template-columns: 1fr; }
       .curriculum-table { font-size: 11px; }
       .curriculum-table th, .curriculum-table td { padding: 8px 6px; }
     }
@@ -373,6 +400,28 @@
           <span class="eyebrow">Candidate B</span><h3>검사·불량·LOT 이력 관리</h3>
           <div class="decision-card"><div class="decision-row"><b>샘플 데이터 확보</b><span>현장 확인</span></div><div class="criterion"><span>검사·불량</span><div class="criterion-meter"><i style="width:74%"></i></div></div><div class="criterion"><span>LOT·조치</span><div class="criterion-meter pending"><i></i></div></div><div class="criterion"><span>사용자 테스트</span><div class="criterion-meter short"><i></i></div></div></div>
           <p>입력 예시: 검사일, 공정, LOT, 판정, 불량유형, 원인, 조치, 담당자. 품질 Key-man이 코드·이력 기준을 검증합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="agent-title">
+      <div class="section-head"><div><span class="eyebrow">POC automation agent</span><h2 id="agent-title">현장 문제를 PoC로 바꾸는 업무자동화 에이전트</h2></div><p>신청서의 생산·품질 중심 과제와 보유 품질 데이터를 바탕으로 설계합니다.</p></div>
+      <div class="agent-shell">
+        <article class="agent-form">
+          <span class="eyebrow">1. PoC brief</span><h3>현장 과제를 입력하세요</h3>
+          <p>내일 회의에서 선택한 과제와 보유 데이터를 입력하면, 작은 실습 범위의 업무자동화 PoC 설계안이 나옵니다.</p>
+          <label class="agent-field"><span>집중 과제</span><select id="agent-area"><option value="production">생산계획·실적·재고·납기 관리</option><option value="quality" selected>품질검사·불량·LOT 관리</option><option value="process">공정 이슈·불량감소 분석</option></select></label>
+          <label class="agent-field"><span>현재 보유 데이터</span><input id="agent-data" value="품질 검사기록, 불량유형, LOT, 원인·조치 이력" maxlength="120"></label>
+          <label class="agent-field"><span>개선 목표</span><input id="agent-goal" value="반복 입력·조회 업무 자동화와 불량 원인 확인 시간 단축" maxlength="120"></label>
+          <button class="agent-build" id="build-agent" type="button">PoC 설계안 만들기</button>
+          <div class="agent-banner">이 에이전트는 실제 업무 시스템을 대신 실행하지 않습니다. 현장 확인용 PoC 설계안과 GPT Business에 붙여 넣을 프롬프트를 준비합니다.</div>
+        </article>
+        <article class="agent-result">
+          <span class="eyebrow">2. POC blueprint</span><h3 id="agent-result-title">품질·LOT 데이터 관리 PoC</h3>
+          <p id="agent-result-summary">검사·불량·LOT 이력을 같은 기준으로 정리하고, 불량 원인과 조치 현황을 빠르게 확인하는 작은 업무자동화 실습입니다.</p>
+          <div class="agent-plan" id="agent-plan"></div>
+          <textarea class="agent-output" id="agent-output" readonly aria-label="GPT Business용 PoC 설계 프롬프트"></textarea>
+          <div class="agent-actions"><span id="agent-copy-status">GPT Business에 붙여 넣어 실습할 수 있습니다.</span><button class="copy-agent" id="copy-agent" type="button">프롬프트 복사</button></div>
         </article>
       </div>
     </section>
@@ -563,6 +612,45 @@
     });
     document.getElementById("close-training-dialog").addEventListener("click", () => trainingDialog.close());
     trainingDialog.addEventListener("click", (event) => { if (event.target === trainingDialog) trainingDialog.close(); });
+
+    const pocAgents = {
+      production: {
+        title: "생산계획·실적·재고·납기 PoC", summary: "계획 대비 실적과 재고·납기 정보를 한 화면에서 확인하고, 지연 사유를 기록·공유하는 업무자동화 실습입니다.",
+        steps: [["01 / 입력", "계획·실적·재고·납기 데이터 모으기"], ["02 / 기준", "품목·날짜·담당자·지연사유 표준화"], ["03 / 자동화", "계획 대비 차이와 납기 위험 표시"], ["04 / 검증", "일일 조회시간·누락 건수 비교"]]
+      },
+      quality: {
+        title: "품질·불량·LOT 데이터 관리 PoC", summary: "검사·불량·LOT 이력을 같은 기준으로 정리하고, 불량 원인과 조치 현황을 빠르게 확인하는 작은 업무자동화 실습입니다.",
+        steps: [["01 / 입력", "검사·불량·LOT·원인·조치 데이터 모으기"], ["02 / 기준", "불량유형·공정·판정 코드 표준화"], ["03 / 자동화", "LOT별 이력과 미조치 항목 표시"], ["04 / 검증", "원인 확인시간·기록 누락 비교"]]
+      },
+      process: {
+        title: "공정 이슈·불량감소 분석 PoC", summary: "현장 공정 이슈를 기록하고 발생 추이·원인·조치를 연결해 반복 문제를 먼저 발견하는 분석형 PoC입니다.",
+        steps: [["01 / 입력", "공정·품목·불량·발생일 데이터 모으기"], ["02 / 기준", "이슈유형·심각도·조치상태 코드화"], ["03 / 자동화", "반복 이슈와 미조치 항목 경보"], ["04 / 검증", "재발 건수·조치 리드타임 비교"]]
+      }
+    };
+    const agentArea = document.getElementById("agent-area");
+    const agentData = document.getElementById("agent-data");
+    const agentGoal = document.getElementById("agent-goal");
+    const agentTitle = document.getElementById("agent-result-title");
+    const agentSummary = document.getElementById("agent-result-summary");
+    const agentPlan = document.getElementById("agent-plan");
+    const agentOutput = document.getElementById("agent-output");
+    const copyStatus = document.getElementById("agent-copy-status");
+    const renderAgent = () => {
+      const item = pocAgents[agentArea.value];
+      const data = agentData.value.trim() || "현장 샘플 데이터";
+      const goal = agentGoal.value.trim() || "반복 업무 자동화";
+      agentTitle.textContent = item.title;
+      agentSummary.textContent = item.summary;
+      agentPlan.innerHTML = item.steps.map(([label, value]) => `<div class="agent-step"><b>${label}</b><strong>${value}</strong></div>`).join("");
+      agentOutput.value = `당신은 KGF 제조현장 업무자동화 PoC 설계 에이전트입니다.\n\n[선정 과제]\n${item.title}\n\n[보유 데이터]\n${data}\n\n[개선 목표]\n${goal}\n\n아래 형식으로, 2주 내 현장 실습 가능한 작은 PoC 설계안을 작성해줘.\n1. As-Is 업무흐름과 병목 3개\n2. 입력 데이터 항목·표준 코드·입력 책임자 표\n3. 노코드 화면 구성(입력·조회·경보)\n4. 자동화 규칙 3개와 예외 처리\n5. 사용자 테스트 시나리오 3개\n6. 개선 전·후 비교 KPI(시간, 오류·누락, 처리건수)\n7. 보안·마스킹 유의사항\n\n고객명, 단가, 도면, 공정조건, 개인·거래처 정보는 실제 값 대신 마스킹된 샘플 데이터로 제안해줘.`;
+      copyStatus.textContent = "GPT Business에 붙여 넣어 실습할 수 있습니다.";
+    };
+    document.getElementById("build-agent").addEventListener("click", renderAgent);
+    document.getElementById("copy-agent").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(agentOutput.value); copyStatus.textContent = "복사되었습니다. GPT Business에 붙여 넣어 보세요."; }
+      catch { agentOutput.focus(); agentOutput.select(); copyStatus.textContent = "내용을 선택했습니다. Ctrl + C로 복사해 주세요."; }
+    });
+    renderAgent();
   </script>
 </body>
 </html>
