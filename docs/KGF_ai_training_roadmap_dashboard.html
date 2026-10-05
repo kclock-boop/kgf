@@ -131,6 +131,26 @@
     .task-card h3 { margin: 17px 0 9px; font-size: 18px; word-break: keep-all; }
     .task-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; word-break: keep-all; }
     .task-card .task-outcome { margin-top: 16px; padding-top: 12px; border-top: 1px solid #e8eeee; color: #355261; font-size: 12px; font-weight: 700; line-height: 1.55; word-break: keep-all; }
+    .management-hub { position: relative; overflow: hidden; padding: 30px; border: 1px solid #efd7da; border-radius: 26px; background: linear-gradient(135deg, #fff9f9 0%, #fff 47%, #f4faf3 100%); }
+    .management-hub::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 7px; background: linear-gradient(90deg, var(--kgf-red), #f26966 48%, var(--kgf-green)); }
+    .management-top { display: flex; justify-content: space-between; gap: 20px; align-items: end; }
+    .management-top h3 { margin: 7px 0 0; font-size: 25px; word-break: keep-all; }
+    .management-top p { max-width: 590px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; text-align: right; word-break: keep-all; }
+    .management-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 23px; }
+    .management-task { min-height: 198px; padding: 18px; border: 1px solid #eadfe1; border-radius: 16px; background: rgba(255,255,255,.9); }
+    .management-task:nth-child(2) { border-color: #d9e6d9; }
+    .management-task:nth-child(3) { border-color: #eee4ca; }
+    .management-task:nth-child(4) { border-color: #d9e9e8; }
+    .management-task .management-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; color: #fff; background: var(--kgf-red); font: 700 11px "DM Mono", monospace; }
+    .management-task:nth-child(2) .management-icon { background: var(--kgf-green); }
+    .management-task:nth-child(3) .management-icon { background: var(--kgf-lime); }
+    .management-task:nth-child(4) .management-icon { background: var(--teal); }
+    .management-task h4 { margin: 15px 0 7px; font-size: 16px; word-break: keep-all; }
+    .management-task p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; word-break: keep-all; }
+    .management-task small { display: block; margin-top: 12px; color: #49616b; font-size: 11px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+    .management-action { display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-top: 17px; padding: 15px 17px; border-radius: 14px; color: white; background: linear-gradient(90deg, #303946, #8f1d2d 63%, #1f7d3d); }
+    .management-action p { margin: 0; color: #fff; font-size: 12px; line-height: 1.55; word-break: keep-all; }
+    .management-launch { flex: 0 0 auto; padding: 10px 13px; border: 0; border-radius: 9px; color: #a10e20; background: white; cursor: pointer; font-size: 12px; font-weight: 700; }
     .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 46px 0 16px; }
     .section-head h2 { margin: 7px 0 0; font: 700 27px/1.25 "Outfit", "IBM Plex Sans KR", sans-serif; letter-spacing: -.035em; word-break: keep-all; }
     .section-head p { margin: 0; color: var(--muted); font-size: 13px; text-align: right; line-height: 1.55; }
@@ -308,7 +328,7 @@
     .curriculum-table td:last-child { color: var(--kgf-red); font: 700 12px "DM Mono", monospace; }
     @media (max-width: 900px) {
       .hero-grid, .priority-wrap, .bottom-grid, .visual-grid, .agent-shell { grid-template-columns: 1fr; }
-      .kpi-grid, .dept-grid, .task-grid { grid-template-columns: repeat(2, 1fr); }
+      .kpi-grid, .dept-grid, .task-grid, .management-grid { grid-template-columns: repeat(2, 1fr); }
       .case-evidence { grid-template-columns: repeat(3, 1fr); }
       .priority-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .priority-tab { margin: 0; }
@@ -322,7 +342,7 @@
       .topbar { align-items: flex-start; }
       .source-tag { display: none; }
       .hero { padding: 30px 22px; border-radius: 22px; }
-      .hero-grid, .kpi-grid, .dept-grid, .task-grid, .detail-grid, .stage-map { grid-template-columns: 1fr; }
+      .hero-grid, .kpi-grid, .dept-grid, .task-grid, .management-grid, .detail-grid, .stage-map { grid-template-columns: 1fr; }
       .stage-map { gap: 20px; }
       .stage-map::before { top: 10%; bottom: 10%; left: 50%; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, var(--teal), #63b6ad 48%, #d7e3e5 48%); }
       .stage { display: grid; grid-template-columns: 68px 1fr; gap: 13px; align-items: center; text-align: left; }
@@ -336,6 +356,9 @@
       .case-top { display: block; }
       .case-badge { display: inline-block; margin-top: 15px; }
       .case-evidence { grid-template-columns: 1fr; }
+      .management-top, .management-action { display: block; }
+      .management-top p { margin-top: 10px; text-align: left; }
+      .management-launch { margin-top: 12px; }
       .agent-plan { grid-template-columns: 1fr; }
       .curriculum-table { font-size: 11px; }
       .curriculum-table th, .curriculum-table td { padding: 8px 6px; }
@@ -395,6 +418,19 @@
         <article class="task-card"><span class="task-no">02</span><h3>생산계획·실적·재고<br>통합 관리</h3><p>계획 대비 실적, 재고, 납기 정보를 같은 기준으로 관리하고 현황을 빠르게 확인합니다.</p><div class="task-outcome">산출물: 생산 현황 자동분석 화면</div></article>
         <article class="task-card"><span class="task-no">03</span><h3>품질검사·불량·LOT<br>표준화</h3><p>검사 결과, 불량 유형, LOT, 원인과 조치 정보를 연결해 품질 이력을 데이터로 관리합니다.</p><div class="task-outcome">산출물: 품질·불량·LOT 분석표</div></article>
         <article class="task-card"><span class="task-no">04</span><h3>Key-man PBL<br>현장 PoC</h3><p>반복업무와 병목 구간을 찾아 바이브코딩·노코드 방식의 작은 PoC로 현장에서 검증합니다.</p><div class="task-outcome">산출물: 업무자동화 또는 제조 AI PoC</div></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="management-title">
+      <div class="management-hub">
+        <div class="management-top"><div><span class="eyebrow" style="color:var(--kgf-red)">PM · MANAGEMENT SUPPORT TRACK</span><h3 id="management-title">경영지원부 업무자동화 PoC</h3></div><p>PM이 주관하여 인사·문서·회계·메일·복무 업무의 반복 입력과 확인 과정을 줄이는 독립 실행 트랙입니다.</p></div>
+        <div class="management-grid">
+          <article class="management-task"><span class="management-icon">HR</span><h4>인사·복무 관리</h4><p>휴가·근태·교육·증빙 요청을 표준 양식으로 접수하고, 누락·승인 현황을 확인합니다.</p><small>PoC: 익명화된 근태·휴가 요청 목록</small></article>
+          <article class="management-task"><span class="management-icon">DOC</span><h4>문서·회의 관리</h4><p>회의록, 보고서, 규정·지침 문서를 요약하고 액션아이템과 담당자를 관리합니다.</p><small>PoC: 회의록 초안·조치사항 보드</small></article>
+          <article class="management-task"><span class="management-icon">ACC</span><h4>회계·증빙 관리</h4><p>지출·증빙·정산 요청을 분류하고, 제출 여부와 검토 상태를 확인합니다.</p><small>PoC: 마스킹된 증빙 요청 현황</small></article>
+          <article class="management-task"><span class="management-icon">MAIL</span><h4>메일·요청 관리</h4><p>반복 문의와 부서 요청을 분류해 회신 초안, 담당자, 기한을 한 화면에서 관리합니다.</p><small>PoC: 요청 유형별 회신 템플릿</small></article>
+        </div>
+        <div class="management-action"><p><strong>보안 원칙:</strong> 주민등록번호, 급여, 계좌번호, 인사평가, 개인 메일 등은 입력하지 않고 마스킹된 샘플 데이터와 승인된 템플릿으로 먼저 검증합니다.</p><button class="management-launch" id="launch-management-agent" type="button">경영지원 PoC 설계하기</button></div>
       </div>
     </section>
 
@@ -462,7 +498,7 @@
         <article class="agent-form">
           <span class="eyebrow">1. PoC brief</span><h3>현장 과제를 입력하세요</h3>
           <p>내일 회의에서 선택한 과제와 보유 데이터를 입력하면, 작은 실습 범위의 업무자동화 PoC 설계안이 나옵니다.</p>
-          <label class="agent-field"><span>집중 과제</span><select id="agent-area"><option value="production">생산계획·실적·재고·납기 관리</option><option value="quality" selected>품질검사·불량·LOT 관리</option><option value="process">공정 이슈·불량감소 분석</option></select></label>
+          <label class="agent-field"><span>집중 과제</span><select id="agent-area"><option value="management">경영지원 인사·문서·회계·메일·복무 관리</option><option value="production">생산계획·실적·재고·납기 관리</option><option value="quality" selected>품질검사·불량·LOT 관리</option><option value="process">공정 이슈·불량감소 분석</option></select></label>
           <label class="agent-field"><span>현재 보유 데이터</span><input id="agent-data" value="품질 검사기록, 불량유형, LOT, 원인·조치 이력" maxlength="120"></label>
           <label class="agent-field"><span>개선 목표</span><input id="agent-goal" value="반복 입력·조회 업무 자동화와 불량 원인 확인 시간 단축" maxlength="120"></label>
           <label class="agent-upload"><span>자료 첨부하기 · Excel / CSV</span><small>인식 예: 날짜, 품목, LOT, 판정·검사결과, 불량수량, 생산수량·실적수량, 계획수량, 재고, 납기일</small><input id="agent-file" type="file" accept=".xlsx,.xls,.csv,.json"></label>
@@ -669,6 +705,10 @@
     trainingDialog.addEventListener("click", (event) => { if (event.target === trainingDialog) trainingDialog.close(); });
 
     const pocAgents = {
+      management: {
+        title: "경영지원 인사·문서·회계·메일·복무 PoC", summary: "PM이 반복되는 요청·문서·증빙 업무를 표준화하고, 담당자·기한·검토 상태를 한 화면에서 확인하는 경영지원 업무자동화 실습입니다.",
+        steps: [["01 / 접수", "익명화된 요청·문서·증빙 목록 모으기"], ["02 / 분류", "업무유형·담당자·기한·승인상태 표준화"], ["03 / 자동화", "회신 초안·누락·기한 경보 만들기"], ["04 / 검증", "처리시간·누락·재작업 건수 비교"]]
+      },
       production: {
         title: "생산계획·실적·재고·납기 PoC", summary: "계획 대비 실적과 재고·납기 정보를 한 화면에서 확인하고, 지연 사유를 기록·공유하는 업무자동화 실습입니다.",
         steps: [["01 / 입력", "계획·실적·재고·납기 데이터 모으기"], ["02 / 기준", "품목·날짜·담당자·지연사유 표준화"], ["03 / 자동화", "계획 대비 차이와 납기 위험 표시"], ["04 / 검증", "일일 조회시간·누락 건수 비교"]]
@@ -767,6 +807,16 @@
       } catch (error) { uploadStatus.textContent = `분석하지 못했습니다: ${error.message}`; }
     });
     document.getElementById("build-agent").addEventListener("click", renderAgent);
+    document.getElementById("launch-management-agent").addEventListener("click", () => {
+      agentArea.value = "management";
+      agentData.value = "익명화된 근태·휴가 요청, 회의록·보고서, 증빙 요청, 메일·부서 요청 이력";
+      agentGoal.value = "반복 문서·메일·복무 업무 자동화와 요청 누락 감소";
+      importedDataSummary = "";
+      dataRows.textContent = "-"; dataLots.textContent = "-"; dataItems.textContent = "-"; dataDefect.textContent = "-";
+      uploadStatus.textContent = "개인정보는 제외하고, 마스킹된 목록과 템플릿만 첨부해 주세요.";
+      renderAgent();
+      document.getElementById("agent-title").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
     document.getElementById("copy-agent").addEventListener("click", async () => {
       try { await navigator.clipboard.writeText(agentOutput.value); copyStatus.textContent = "복사되었습니다. GPT Business에 붙여 넣어 보세요."; }
       catch { agentOutput.focus(); agentOutput.select(); copyStatus.textContent = "내용을 선택했습니다. Ctrl + C로 복사해 주세요."; }
