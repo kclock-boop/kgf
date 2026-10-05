@@ -98,6 +98,25 @@
     .metric strong { display: block; margin-top: 13px; color: var(--navy); font: 700 38px/1 "Outfit", sans-serif; letter-spacing: -.04em; }
     .metric strong.word { font: 700 24px/1.22 "IBM Plex Sans KR", sans-serif; }
     .metric .caption { margin: 9px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; word-break: keep-all; }
+    .case-spotlight { overflow: hidden; position: relative; padding: 30px; border: 1px solid #d6e2d9; border-radius: 26px; color: white; background: linear-gradient(118deg, #1d2732 0%, #254235 58%, #1c803b 100%); box-shadow: var(--shadow); }
+    .case-spotlight::after { content: ""; position: absolute; width: 270px; height: 270px; right: -70px; top: -118px; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; }
+    .case-top { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 24px; align-items: start; }
+    .case-top h2 { max-width: 690px; margin: 9px 0 0; font: 700 clamp(25px, 3.2vw, 37px)/1.25 "Outfit", "IBM Plex Sans KR", sans-serif; letter-spacing: -.04em; word-break: keep-all; }
+    .case-top p { max-width: 730px; margin: 12px 0 0; color: #d7eadc; font-size: 13px; line-height: 1.65; word-break: keep-all; }
+    .case-badge { flex: 0 0 auto; padding: 12px 14px; border: 1px solid rgba(255,255,255,.3); border-radius: 14px; color: #fff; background: rgba(255,255,255,.1); font-size: 12px; line-height: 1.55; word-break: keep-all; }
+    .case-badge b { display: block; color: #d7f56d; font: 700 11px "DM Mono", monospace; letter-spacing: .07em; }
+    .case-evidence { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; margin-top: 25px; }
+    .case-evidence article { min-height: 137px; padding: 15px; border: 1px solid rgba(255,255,255,.18); border-radius: 15px; background: rgba(255,255,255,.09); }
+    .case-evidence .case-icon { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; color: #1d2732; background: #d7f56d; font: 700 10px "DM Mono", monospace; }
+    .case-evidence article:nth-child(2) .case-icon { background: #ffd47e; }
+    .case-evidence article:nth-child(3) .case-icon { color: white; background: #e63b46; }
+    .case-evidence article:nth-child(4) .case-icon { color: white; background: #3ba56b; }
+    .case-evidence article:nth-child(5) .case-icon { color: white; background: #4892d9; }
+    .case-evidence strong { display: block; margin-top: 12px; font-size: 14px; word-break: keep-all; }
+    .case-evidence p { margin: 7px 0 0; color: #d8e7dc; font-size: 11px; line-height: 1.55; word-break: keep-all; }
+    .case-proof { position: relative; z-index: 1; display: flex; gap: 15px; align-items: center; margin-top: 14px; padding: 14px 16px; border-radius: 14px; color: #29403a; background: #f3f8ed; }
+    .case-proof b { flex: 0 0 auto; color: var(--kgf-red); font-size: 13px; }
+    .case-proof span { color: #4c625c; font-size: 12px; line-height: 1.55; word-break: keep-all; }
     .task-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .task-card { position: relative; min-height: 246px; padding: 22px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: white; box-shadow: 0 10px 24px rgba(14,45,61,.045); }
     .task-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--kgf-red); }
@@ -276,6 +295,7 @@
     @media (max-width: 900px) {
       .hero-grid, .priority-wrap, .bottom-grid, .visual-grid, .agent-shell { grid-template-columns: 1fr; }
       .kpi-grid, .dept-grid, .task-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-evidence { grid-template-columns: repeat(3, 1fr); }
       .priority-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .priority-tab { margin: 0; }
       .roadmap { grid-template-columns: 1fr; }
@@ -298,6 +318,9 @@
       .agent-plan { grid-template-columns: repeat(2, 1fr); }
       .priority-top, .section-head { display: block; }
       .section-head p { margin-top: 9px; text-align: left; }
+      .case-top { display: block; }
+      .case-badge { display: inline-block; margin-top: 15px; }
+      .case-evidence { grid-template-columns: 1fr; }
       .agent-plan { grid-template-columns: 1fr; }
       .curriculum-table { font-size: 11px; }
       .curriculum-table th, .curriculum-table td { padding: 8px 6px; }
@@ -334,6 +357,20 @@
       <article class="metric"><span class="metric-label">실행 주체</span><strong>4</strong><p class="caption">경영지원·생산·품질·영업 TF Key-man</p></article>
       <article class="metric"><span class="metric-label">최우선 과제</span><strong>2</strong><p class="caption">생산 데이터 표준화 / 품질·LOT 표준화</p></article>
       <article class="metric"><span class="metric-label">첫 PoC 원칙</span><strong class="word">1개 선택</strong><p class="caption">동시 개발 대신 작은 흐름을 먼저 검증</p></article>
+    </section>
+
+    <section class="section" aria-labelledby="case-title">
+      <div class="case-spotlight">
+        <div class="case-top"><div><span class="eyebrow" style="color:#d7f56d">Best practice candidate</span><h2 id="case-title">KGF는 “AI 도입”을<br>제조 현장 PoC로 연결한 우수사례 후보입니다</h2><p>개인 단위의 AI 사용을 넘어, 생산·품질 데이터 표준화와 현장 실습을 통해 조직의 실행모델을 만드는 단계입니다.</p></div><div class="case-badge"><b>CURRENT STAGE</b>우수사례 구축·추진 모델<br>PoC 검증 후 정량 성과 확정</div></div>
+        <div class="case-evidence">
+          <article><span class="case-icon">01</span><strong>조직 기반</strong><p>GPT Business 34계정과 4명 Key-man TF로 실행 주체를 확보했습니다.</p></article>
+          <article><span class="case-icon">02</span><strong>현장 과제 중심</strong><p>생산·품질·LOT와 문서·보고 자동화를 실제 업무 과제로 선정했습니다.</p></article>
+          <article><span class="case-icon">03</span><strong>단계적 모델</strong><p>AI 기초활용 → 데이터 표준화·자동화 → 제조 DX·AX로 확장합니다.</p></article>
+          <article><span class="case-icon">04</span><strong>실습 도구화</strong><p>대시보드, 훈련명세서, PoC 에이전트와 프롬프트를 준비했습니다.</p></article>
+          <article><span class="case-icon">05</span><strong>보안 원칙</strong><p>민감정보 마스킹과 사람의 검증을 전제로 현장 적용을 설계했습니다.</p></article>
+        </div>
+        <div class="case-proof"><b>우수사례 완성 요건</b><span>PoC 1건 실제 운영 후 업무시간 절감, 오류·누락 감소, 사용자 수, 표준 데이터셋 구축, 전·후 비교 중 2~3개 지표를 수치로 확보합니다.</span></div>
+      </div>
     </section>
 
     <section class="section" aria-labelledby="selected-task-title">
