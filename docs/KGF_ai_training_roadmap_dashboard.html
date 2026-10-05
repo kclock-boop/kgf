@@ -194,7 +194,8 @@
     .roadmap-item ul { margin: 0; padding-left: 18px; color: #4d6472; font-size: 13px; line-height: 1.8; word-break: keep-all; }
     .roadmap-item li + li { margin-top: 5px; }
     .learning-path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .learning-step { min-height: 300px; padding: 26px; border-radius: 22px; color: white; background: linear-gradient(145deg, #27313b, #3c4853); }
+    .learning-step { min-height: 300px; padding: 26px; border: 0; border-radius: 22px; color: white; background: linear-gradient(145deg, #27313b, #3c4853); cursor: pointer; text-align: left; transition: transform .22s ease, box-shadow .22s ease; }
+    .learning-step:hover, .learning-step:focus-visible { outline: 0; transform: translateY(-5px); box-shadow: 0 18px 32px rgba(15,35,43,.22); }
     .learning-step:nth-child(2) { background: linear-gradient(145deg, #176337, #278653); }
     .learning-step:nth-child(3) { background: linear-gradient(145deg, #b71220, #df2832); }
     .learning-step .level { display: inline-flex; padding: 7px 10px; border: 1px solid rgba(255,255,255,.32); border-radius: 99px; color: #fff; font: 600 10px/1 "DM Mono", monospace; letter-spacing: .08em; }
@@ -202,6 +203,7 @@
     .learning-step p { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; line-height: 1.65; word-break: keep-all; }
     .learning-step ul { margin: 20px 0 0; padding: 0; list-style: none; }
     .learning-step li { padding: 8px 0; border-top: 1px solid rgba(255,255,255,.18); color: #fff; font-size: 12px; line-height: 1.5; word-break: keep-all; }
+    .learning-step .click-hint { display: inline-flex; margin-top: 17px; color: rgba(255,255,255,.88); font-size: 11px; font-weight: 700; }
     .outcome-band { display: grid; grid-template-columns: 1.2fr repeat(3, .8fr); gap: 1px; overflow: hidden; border-radius: 22px; background: var(--line); box-shadow: 0 12px 26px rgba(14,45,61,.05); }
     .outcome-intro, .outcome-metric { min-height: 148px; padding: 22px; background: white; }
     .outcome-intro { color: white; background: linear-gradient(135deg, #1e2833, #294d36); }
@@ -234,6 +236,12 @@
     .dialog-inner p { color: #4a6270; line-height: 1.75; word-break: keep-all; }
     .dialog-list { margin: 18px 0 0; padding: 0; list-style: none; }
     .dialog-list li { margin-top: 8px; padding: 11px 13px; border-radius: 10px; background: #f2f7f6; color: #385563; font-size: 13px; line-height: 1.55; }
+    .training-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 18px; }
+    .training-meta div { padding: 11px; border-radius: 10px; background: #f3f7f4; }
+    .training-meta span { display: block; color: var(--muted); font-size: 10px; }
+    .training-meta strong { display: block; margin-top: 4px; color: var(--ink); font-size: 12px; line-height: 1.45; word-break: keep-all; }
+    .training-dialog-heading { margin: 22px 0 0; color: var(--kgf-green); font-size: 13px; }
+    .training-dialog-list { margin: 8px 0 0; padding-left: 19px; color: #3f5967; font-size: 13px; line-height: 1.65; word-break: keep-all; }
     @media (max-width: 900px) {
       .hero-grid, .priority-wrap, .bottom-grid, .visual-grid { grid-template-columns: 1fr; }
       .kpi-grid, .dept-grid, .task-grid { grid-template-columns: repeat(2, 1fr); }
@@ -383,9 +391,9 @@
     <section class="section" aria-labelledby="learning-title">
       <div class="section-head"><div><span class="eyebrow">Training architecture</span><h2 id="learning-title">훈련은 3단계로 현장에 남깁니다</h2></div><p>보고서의 초급·중급·고급 훈련 설계를 발표용으로 압축했습니다.</p></div>
       <div class="learning-path">
-        <article class="learning-step"><span class="level">LEVEL 1 · 기초</span><h3>생성형 AI 기반<br>제조업무 활용</h3><p>전 직원과 TF가 안전한 AI 사용과 직무별 프롬프트 활용법을 익힙니다.</p><ul><li>GPT Business·데이터 보안 기준</li><li>문서·회의·실적자료 AI 활용</li><li>생산·품질 데이터 기초 이해</li></ul></article>
-        <article class="learning-step"><span class="level">LEVEL 2 · 중급</span><h3>데이터 표준화와<br>업무자동화</h3><p>Key-man이 생산·품질·재고·납기 데이터를 정리하고 작은 통합 화면을 만듭니다.</p><ul><li>표준 항목·코드·입력기준 정의</li><li>계획 대비 실적·불량·LOT 분석</li><li>Data Room·Dashboard PoC</li></ul></article>
-        <article class="learning-step"><span class="level">LEVEL 3 · 고급</span><h3>제조 AX PBL<br>현장문제 해결</h3><p>축적한 데이터로 불량·납기 위험을 탐색하고 현장 검증을 거쳐 확산 여부를 결정합니다.</p><ul><li>현장 병목 진단과 KPI 설계</li><li>바이브코딩 기반 PoC 구현</li><li>생산스케줄링·품질예측 검토</li></ul></article>
+        <article class="learning-step" data-training="basic" role="button" tabindex="0" aria-haspopup="dialog"><span class="level">LEVEL 1 · 기초</span><h3>생성형 AI 기반<br>제조업무 활용</h3><p>전 직원과 TF가 안전한 AI 사용과 직무별 프롬프트 활용법을 익힙니다.</p><ul><li>GPT Business·데이터 보안 기준</li><li>문서·회의·실적자료 AI 활용</li><li>생산·품질 데이터 기초 이해</li></ul><span class="click-hint">훈련명세서 보기 →</span></article>
+        <article class="learning-step" data-training="intermediate" role="button" tabindex="0" aria-haspopup="dialog"><span class="level">LEVEL 2 · 중급</span><h3>데이터 표준화와<br>업무자동화</h3><p>Key-man이 생산·품질·재고·납기 데이터를 정리하고 작은 통합 화면을 만듭니다.</p><ul><li>표준 항목·코드·입력기준 정의</li><li>계획 대비 실적·불량·LOT 분석</li><li>Data Room·Dashboard PoC</li></ul><span class="click-hint">훈련명세서 보기 →</span></article>
+        <article class="learning-step" data-training="advanced" role="button" tabindex="0" aria-haspopup="dialog"><span class="level">LEVEL 3 · 고급</span><h3>제조 AX PBL<br>현장문제 해결</h3><p>축적한 데이터로 불량·납기 위험을 탐색하고 현장 검증을 거쳐 확산 여부를 결정합니다.</p><ul><li>현장 병목 진단과 KPI 설계</li><li>바이브코딩 기반 PoC 구현</li><li>생산스케줄링·품질예측 검토</li></ul><span class="click-hint">훈련명세서 보기 →</span></article>
       </div>
     </section>
 
@@ -421,6 +429,7 @@
   </main>
 
   <dialog id="department-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><div class="dialog-top"><div><span class="eyebrow">Department detail</span><h3 id="dialog-title"></h3></div><button class="close" id="close-dialog" aria-label="닫기">×</button></div><p id="dialog-summary"></p><ul class="dialog-list" id="dialog-list"></ul></div></dialog>
+  <dialog id="training-dialog" aria-labelledby="training-dialog-title"><div class="dialog-inner"><div class="dialog-top"><div><span class="eyebrow">Training specification</span><h3 id="training-dialog-title"></h3></div><button class="close" id="close-training-dialog" aria-label="닫기">×</button></div><div class="training-meta" id="training-meta"></div><h4 class="training-dialog-heading">훈련목표</h4><p id="training-goal"></p><h4 class="training-dialog-heading">주요 훈련 내용</h4><ul class="training-dialog-list" id="training-content"></ul><h4 class="training-dialog-heading">예상 성과물</h4><ul class="training-dialog-list" id="training-output"></ul></div></dialog>
 
   <script>
     const priorities = {
@@ -446,6 +455,27 @@
       production: { title: "생산관리", summary: "계획·실적·재고·납기 정보가 분산되어 변경 상황을 종합적으로 판단하기 어려운 영역입니다.", points: ["첫 산출물: 생산계획·실적·지연사유 공통 양식, 일일 현황보드, 경보 규칙", "현장 질문: 오늘 지연 현황을 확인하려면 어떤 파일을 누구에게서 받아야 하는가?", "초기 KPI: 계획 대비 달성률, 지연 건수, 집계 소요시간"] },
       quality: { title: "품질관리", summary: "검사·불량·LOT·조치 기록의 기준이 흩어져 원인 분석과 이력 추적이 제한되는 영역입니다.", points: ["첫 산출물: 검사·불량 코드 체계, LOT 이력 맵, 불량·조치 대시보드", "현장 질문: 불량 1건을 품목·공정·LOT·원인·조치까지 한 번에 연결할 수 있는가?", "초기 KPI: 검사기록 누락률, 조치 리드타임, LOT 추적 가능률"] },
       sales: { title: "영업", summary: "수주·납기변경·고객 요청정보가 개별 관리되어 생산 확인과 고객 대응에 시간이 걸릴 수 있는 영역입니다.", points: ["첫 산출물: 수주·납기변경·고객요청 표준 목록, 대응자료 템플릿", "현장 질문: 납기변경 요청이 생기면 생산 확인과 고객회신까지 어떤 단계가 필요한가?", "초기 KPI: 고객요청 응답시간, 납기변경 반영시간"] }
+    };
+
+    const trainingSpecs = {
+      basic: {
+        title: "생성형 AI 기반 제조업무 활용 기초", period: "2027년 1/4분기", level: "초급", method: "사내 집체훈련 + 실습", target: "경영지원·생산·품질관리·영업 실무자 및 AI TF·Key-man",
+        goal: "생성형 AI와 GPT Business의 기본 원리 및 안전한 활용방법을 이해하고, 경영지원·생산·품질·영업의 반복 업무에 AI를 적용하여 문서작성, 자료검색, 데이터 정리와 기초 분석을 수행합니다.",
+        contents: ["AI 리터러시 및 GPT Business 이해", "기업·고객·생산정보 보안과 AI 입력 가능·금지 기준", "직무별 질문·요약·분석 프롬프트 실습", "보고서·회의록·실적자료 작성과 기존 문서 요약", "생산계획·실적·검사·불량·LOT 데이터 기초 활용", "실제 반복업무를 선정해 AI 적용 전·후 흐름 비교"],
+        outputs: ["개인별 업무 프롬프트 템플릿", "AI 활용 업무사례 1건 이상", "부서별 반복업무 개선 후보과제", "AI·데이터 보안 체크리스트"]
+      },
+      intermediate: {
+        title: "AI·데이터 기반 제조업무 자동화 및 통합관리", period: "2027년 1/4분기", level: "중급", method: "사내 집체훈련 + 현장실습", target: "경영지원·생산·품질관리 Key-man 및 실무 담당자",
+        goal: "생산·품질·재고·납기 데이터를 표준화하고, 생성형 AI·데이터 분석·바이브코딩을 활용해 반복 업무를 자동화하며 생산·품질정보를 통합 조회·분석하는 업무관리 체계를 구축합니다.",
+        contents: ["생산·품질·재고·납기 데이터 구조와 표준 코드·입력기준 정의", "생산계획 대비 실적, 생산량·작업시간·납기 데이터 분석", "불량유형 분류·코드화와 품목·공정·LOT 분석", "반복업무 워크플로우 분석 및 바이브코딩 자동화 기능 설계", "Data Room·통합 Dashboard 구축", "업무시간·오류·누락의 개선 전·후 비교"],
+        outputs: ["생산·품질 표준 데이터 항목 정의서", "생산계획 대비 실적 자동분석 화면", "품질·불량·LOT 분석표", "업무자동화 프로토타입", "Data Room 또는 Dashboard PoC 1건"]
+      },
+      advanced: {
+        title: "AI 기반 생산·품질 현장문제 해결 및 제조 AX PoC PBL", period: "2027년 1/4분기", level: "고급", method: "현장훈련 + PBL + 프로젝트 실습", target: "AI TF·Key-man, 생산·품질관리 핵심 실무자",
+        goal: "생산·품질 문제를 AI 적용과제로 선정하고 생산·품질·LOT 데이터를 활용해 바이브코딩 기반 업무자동화 및 AI PoC를 구축하며, 제조 DX·AX로 확대하는 현장 문제해결 역량을 확보합니다.",
+        contents: ["생산·품질 업무의 반복·병목·오류 구간 진단", "보유 데이터 분석과 PBL 과제·KPI 설계", "생산·품질·LOT 데이터 정제와 분석용 데이터셋 구성", "LLM 기반 코드 생성·수정과 사용자 인터페이스 구현", "불량분석·이상징후·납기위험 분석 및 AI 권고 기능 검토", "현장 테스트, 전·후 비교, 사용자 피드백 반영과 확산방안 수립"],
+        outputs: ["PBL 과제정의서 1건 이상", "표준 데이터셋 1식", "업무자동화 또는 제조 AI PoC 1건 이상", "현장 통합보드"]
+      }
     };
 
     const content = document.getElementById("priority-content");
@@ -479,6 +509,28 @@
     });
     document.getElementById("close-dialog").addEventListener("click", () => dialog.close());
     dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+
+    const trainingDialog = document.getElementById("training-dialog");
+    const trainingTitle = document.getElementById("training-dialog-title");
+    const trainingMeta = document.getElementById("training-meta");
+    const trainingGoal = document.getElementById("training-goal");
+    const trainingContent = document.getElementById("training-content");
+    const trainingOutput = document.getElementById("training-output");
+    const openTrainingSpec = (key) => {
+      const item = trainingSpecs[key];
+      trainingTitle.textContent = item.title;
+      trainingMeta.innerHTML = [["훈련시기", item.period], ["훈련수준", item.level], ["훈련방법", item.method], ["훈련대상", item.target]].map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join("");
+      trainingGoal.textContent = item.goal;
+      trainingContent.innerHTML = item.contents.map((value) => `<li>${value}</li>`).join("");
+      trainingOutput.innerHTML = item.outputs.map((value) => `<li>${value}</li>`).join("");
+      trainingDialog.showModal();
+    };
+    document.querySelectorAll("[data-training]").forEach((card) => {
+      card.addEventListener("click", () => openTrainingSpec(card.dataset.training));
+      card.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openTrainingSpec(card.dataset.training); } });
+    });
+    document.getElementById("close-training-dialog").addEventListener("click", () => trainingDialog.close());
+    trainingDialog.addEventListener("click", (event) => { if (event.target === trainingDialog) trainingDialog.close(); });
   </script>
 </body>
 </html>
