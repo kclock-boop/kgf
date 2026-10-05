@@ -101,6 +101,32 @@
     .detail { padding: 16px; border-radius: 14px; background: #f5f8f7; }
     .detail label { color: var(--muted); font-size: 11px; }
     .detail strong { display: block; margin-top: 8px; font-size: 13px; line-height: 1.55; word-break: keep-all; }
+    .visual-grid { display: grid; grid-template-columns: 1.06fr .94fr; gap: 14px; }
+    .visual-panel { overflow: hidden; position: relative; min-height: 355px; padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.92); }
+    .visual-panel h3 { margin: 8px 0 0; font-size: 22px; word-break: keep-all; }
+    .visual-panel > p { max-width: 580px; margin: 11px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; word-break: keep-all; }
+    .stage-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; position: relative; margin-top: 38px; }
+    .stage-map::before { content: ""; position: absolute; top: 34px; left: 14%; right: 14%; height: 2px; background: linear-gradient(90deg, var(--teal), #63b6ad 48%, #d7e3e5 48%); }
+    .stage { position: relative; z-index: 1; text-align: center; }
+    .stage-dot { display: grid; width: 68px; height: 68px; margin: 0 auto; place-items: center; border: 7px solid white; border-radius: 50%; color: white; background: var(--teal); box-shadow: 0 8px 22px rgba(0,124,120,.25); font: 700 13px "DM Mono", monospace; }
+    .stage:nth-child(2) .stage-dot { background: #42a89d; }
+    .stage:nth-child(3) .stage-dot { color: #78919b; background: #e8eff0; box-shadow: none; }
+    .stage h4 { margin: 14px 0 0; font-size: 15px; }
+    .stage p { margin: 7px auto 0; max-width: 135px; color: var(--muted); font-size: 11px; line-height: 1.55; word-break: keep-all; }
+    .stage-note { display: flex; align-items: center; gap: 8px; margin: 26px 0 0; padding: 12px 14px; border-radius: 12px; color: #42616a; background: #eff7f5; font-size: 12px; line-height: 1.45; word-break: keep-all; }
+    .stage-note b { color: var(--teal); }
+    .flow-art { margin-top: 22px; width: 100%; height: 205px; }
+    .flow-art text { font-family: "IBM Plex Sans KR", sans-serif; }
+    .decision-card { margin-top: 21px; padding: 16px; border: 1px solid #dce7e7; border-radius: 15px; background: linear-gradient(135deg, #fbfdfd, #f0f7f6); }
+    .decision-card + .decision-card { margin-top: 10px; }
+    .decision-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .decision-row b { font-size: 13px; word-break: keep-all; }
+    .decision-row span { flex: 0 0 auto; color: var(--teal); font: 600 10px "DM Mono", monospace; letter-spacing: .04em; }
+    .criterion { display: grid; grid-template-columns: 74px 1fr; gap: 9px; align-items: center; margin-top: 11px; color: #607684; font-size: 11px; }
+    .criterion-meter { height: 7px; overflow: hidden; border-radius: 99px; background: #dfe9e9; }
+    .criterion-meter i { display: block; height: 100%; border-radius: 99px; background: repeating-linear-gradient(90deg, #45a99f 0 12px, transparent 12px 17px); }
+    .criterion-meter.pending i { width: 48%; background: repeating-linear-gradient(90deg, #e5a849 0 12px, transparent 12px 17px); }
+    .criterion-meter.short i { width: 35%; background: repeating-linear-gradient(90deg, #d5dee1 0 12px, transparent 12px 17px); }
     .dept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .dept { position: relative; min-height: 270px; padding: 22px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: white; transition: transform .25s ease, box-shadow .25s ease; }
     .dept:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
@@ -139,7 +165,7 @@
     .dialog-list { margin: 18px 0 0; padding: 0; list-style: none; }
     .dialog-list li { margin-top: 8px; padding: 11px 13px; border-radius: 10px; background: #f2f7f6; color: #385563; font-size: 13px; line-height: 1.55; }
     @media (max-width: 900px) {
-      .hero-grid, .priority-wrap, .bottom-grid { grid-template-columns: 1fr; }
+      .hero-grid, .priority-wrap, .bottom-grid, .visual-grid { grid-template-columns: 1fr; }
       .kpi-grid, .dept-grid { grid-template-columns: repeat(2, 1fr); }
       .priority-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .priority-tab { margin: 0; }
@@ -152,7 +178,12 @@
       .topbar { align-items: flex-start; }
       .source-tag { display: none; }
       .hero { padding: 30px 22px; border-radius: 22px; }
-      .hero-grid, .kpi-grid, .dept-grid, .detail-grid { grid-template-columns: 1fr; }
+      .hero-grid, .kpi-grid, .dept-grid, .detail-grid, .stage-map { grid-template-columns: 1fr; }
+      .stage-map { gap: 20px; }
+      .stage-map::before { top: 10%; bottom: 10%; left: 50%; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, var(--teal), #63b6ad 48%, #d7e3e5 48%); }
+      .stage { display: grid; grid-template-columns: 68px 1fr; gap: 13px; align-items: center; text-align: left; }
+      .stage h4 { margin: 0; }
+      .stage p { margin: 6px 0 0; max-width: none; }
       .priority-tabs { grid-template-columns: 1fr; }
       .priority-top, .section-head { display: block; }
       .section-head p { margin-top: 9px; text-align: left; }
@@ -200,6 +231,52 @@
           <button class="priority-tab" data-priority="p3" role="tab" aria-selected="false"><b>P3 · 제조 AX</b><span>데이터 축적 후</span></button>
         </div>
         <div class="priority-body" id="priority-content" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="visual-title">
+      <div class="section-head"><div><span class="eyebrow">Visual decision map</span><h2 id="visual-title">한 장으로 설명하는 전환 구조</h2></div><p>현장 데이터가 쌓이는 순서와 첫 PoC 선택 기준을 함께 봅니다.</p></div>
+      <div class="visual-grid">
+        <article class="visual-panel">
+          <span class="eyebrow">AI → DX → AX</span><h3>교육에서 예측까지, 순서를 지킵니다</h3>
+          <p>보고서의 핵심 방향은 AI 도구 사용을 먼저 익힌 뒤, 현장 데이터를 표준화하고, 그 다음에 자동화·예측으로 확장하는 것입니다.</p>
+          <div class="stage-map" aria-label="AI DX AX 단계 그래프">
+            <div class="stage"><div class="stage-dot">AI</div><div><h4>안전한 AI 활용</h4><p>프롬프트·문서·검증 기준</p></div></div>
+            <div class="stage"><div class="stage-dot">DX</div><div><h4>데이터 표준화·자동화</h4><p>양식·코드·입력 책임·PoC</p></div></div>
+            <div class="stage"><div class="stage-dot">AX</div><div><h4>예측·추천·최적화</h4><p>품질·납기·스케줄링 검증</p></div></div>
+          </div>
+          <div class="stage-note"><b>현재 집중:</b> AI 훈련과 P1 데이터 표준화. AX는 데이터 품질과 현장 검증이 준비된 뒤 추진합니다.</div>
+        </article>
+        <article class="visual-panel">
+          <span class="eyebrow">Connected data map</span><h3>부서 데이터는 같은 질문으로 연결됩니다</h3>
+          <svg class="flow-art" viewBox="0 0 520 205" role="img" aria-label="생산 품질 영업 데이터가 공통 데이터 기준으로 연결되는 그림">
+            <defs><linearGradient id="flow-gradient" x1="0" x2="1"><stop stop-color="#007c78"/><stop offset="1" stop-color="#74c7bd"/></linearGradient></defs>
+            <path d="M112 48 C205 48 195 104 260 104" fill="none" stroke="url(#flow-gradient)" stroke-width="3" stroke-dasharray="5 6"/>
+            <path d="M112 158 C205 158 195 104 260 104" fill="none" stroke="url(#flow-gradient)" stroke-width="3" stroke-dasharray="5 6"/>
+            <path d="M408 103 C358 103 342 103 302 103" fill="none" stroke="url(#flow-gradient)" stroke-width="3" stroke-dasharray="5 6"/>
+            <rect x="10" y="22" width="105" height="53" rx="14" fill="#e0f5f2"/><text x="62" y="45" text-anchor="middle" fill="#007c78" font-size="12" font-weight="700">생산</text><text x="62" y="63" text-anchor="middle" fill="#55717b" font-size="10">계획 · 실적 · 재고</text>
+            <rect x="10" y="132" width="105" height="53" rx="14" fill="#fff0e9"/><text x="62" y="155" text-anchor="middle" fill="#cf533d" font-size="12" font-weight="700">품질</text><text x="62" y="173" text-anchor="middle" fill="#55717b" font-size="10">검사 · 불량 · LOT</text>
+            <circle cx="280" cy="103" r="54" fill="#102e43"/><text x="280" y="98" text-anchor="middle" fill="#bdf3eb" font-size="12" font-weight="700">공통 데이터</text><text x="280" y="116" text-anchor="middle" fill="#c8dde0" font-size="10">코드 · 양식 · 책임</text>
+            <rect x="407" y="77" width="105" height="53" rx="14" fill="#fff4dc"/><text x="459" y="100" text-anchor="middle" fill="#9b6810" font-size="12" font-weight="700">영업</text><text x="459" y="118" text-anchor="middle" fill="#55717b" font-size="10">수주 · 납기 · 요청</text>
+          </svg>
+          <p style="margin-top:4px">공통 데이터 기준을 만들면, 부서별 화면은 달라도 같은 현황을 기준으로 회의하고 결정할 수 있습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="poc-title">
+      <div class="section-head"><div><span class="eyebrow">P1 PoC decision graph</span><h2 id="poc-title">첫 PoC는 둘 중 하나를 선택합니다</h2></div><p>점수는 실제 평가값이 아니라, 현장 확인을 위한 준비도 항목입니다.</p></div>
+      <div class="visual-grid">
+        <article class="visual-panel">
+          <span class="eyebrow">Candidate A</span><h3>생산계획 대비 실적·납기 현황보드</h3>
+          <div class="decision-card"><div class="decision-row"><b>샘플 데이터 확보</b><span>현장 확인</span></div><div class="criterion"><span>계획·실적</span><div class="criterion-meter"><i style="width:74%"></i></div></div><div class="criterion"><span>재고·납기</span><div class="criterion-meter pending"><i></i></div></div><div class="criterion"><span>사용자 테스트</span><div class="criterion-meter short"><i></i></div></div></div>
+          <p>입력 예시: 날짜, 품목, 계획수량, 실적수량, 지연사유, 납기일, 담당자. 생산 Key-man이 현장 사용성을 검증합니다.</p>
+        </article>
+        <article class="visual-panel">
+          <span class="eyebrow">Candidate B</span><h3>검사·불량·LOT 이력 관리</h3>
+          <div class="decision-card"><div class="decision-row"><b>샘플 데이터 확보</b><span>현장 확인</span></div><div class="criterion"><span>검사·불량</span><div class="criterion-meter"><i style="width:74%"></i></div></div><div class="criterion"><span>LOT·조치</span><div class="criterion-meter pending"><i></i></div></div><div class="criterion"><span>사용자 테스트</span><div class="criterion-meter short"><i></i></div></div></div>
+          <p>입력 예시: 검사일, 공정, LOT, 판정, 불량유형, 원인, 조치, 담당자. 품질 Key-man이 코드·이력 기준을 검증합니다.</p>
+        </article>
       </div>
     </section>
 
