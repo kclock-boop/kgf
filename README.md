@@ -3,7 +3,7 @@
 ## 최종 전달 링크
 
 - 케이지에프 소개 홈페이지: https://kclock-boop.github.io/kgf/
-- 생산·품질 AI 운영 대시보드: https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html
+- AI 훈련로드맵 의사결정 대시보드: https://kclock-boop.github.io/kgf/docs/KGF_ai_training_roadmap_dashboard.html
 - AI컨설팅 자료실: https://kclock-boop.github.io/kgf/ai-consulting-materials/
 
 이 저장소는 2026년 9월 2일(수) 예정 `(주)케이지에프 AI 훈련컨설팅`을 위해 정리한 검토용 자료 모음입니다. 사전 수준진단 결과 `26점 / Level 1`을 반영해, AI 사용 보안과 데이터 기준을 먼저 정비한 뒤 작은 실무 과제로 검증하는 흐름으로 보완했습니다.
@@ -15,8 +15,8 @@
 - 컨설팅 허브 페이지: [site/index.html](./site/index.html)
 - GitHub Pages 메인: [https://kclock-boop.github.io/kgf/](https://kclock-boop.github.io/kgf/)
 - 허브페이지 직접열기: [https://kclock-boop.github.io/kgf/site/index.html](https://kclock-boop.github.io/kgf/site/index.html)
-- 생산·품질 AI 운영 대시보드: [docs/KGF_manufacturing_ai_dashboard.html](./docs/KGF_manufacturing_ai_dashboard.html)
-- 대시보드 직접열기: [https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html](https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html)
+- AI 훈련로드맵 의사결정 대시보드: [docs/KGF_ai_training_roadmap_dashboard.html](./docs/KGF_ai_training_roadmap_dashboard.html)
+- 대시보드 직접열기: [https://kclock-boop.github.io/kgf/docs/KGF_ai_training_roadmap_dashboard.html](https://kclock-boop.github.io/kgf/docs/KGF_ai_training_roadmap_dashboard.html)
 - AI컨설팅 자료실: [https://kclock-boop.github.io/kgf/ai-consulting-materials/](https://kclock-boop.github.io/kgf/ai-consulting-materials/)
 - 자료실 GitHub 폴더: [ai-consulting-materials](./ai-consulting-materials/)
 - 컨설팅 구성요약: [proposal/케이지에프_AI훈련컨설팅_구성요약.md](./proposal/%EC%BC%80%EC%9D%B4%EC%A7%80%EC%97%90%ED%94%84_AI%ED%9B%88%EB%A0%A8%EC%BB%A8%EC%84%A4%ED%8C%85_%EA%B5%AC%EC%84%B1%EC%9A%94%EC%95%BD.md)
@@ -28,7 +28,7 @@
 
 - 현장 방문 컨설팅에서 `AI 훈련 우선순위`를 빠르게 설명할 수 있도록 기준 자료 준비
 - 케이지에프를 `소재 제조`, `품질 관리`, `R&D 기반 확장성` 관점에서 소개하는 허브 페이지 구성
-- 생산·품질 부서 중심의 `AI 운영 대시보드 시안` 제시
+- 첫 PoC 과제와 데이터 기준을 결정하는 `AI 훈련로드맵 의사결정 대시보드` 제시
 - 경영진, 실무부서, 훈련 담당자가 같은 자료를 보고 다른 질문을 할 수 있게 구조화
 - 후속 PoC, 교육, 데이터 표준화 논의를 이어갈 수 있는 출발 문서 확보
 
@@ -39,10 +39,10 @@
 - 파일: [site/index.html](./site/index.html)
 - 설명: 공식 홈페이지와 사업 참여신청서에서 확인된 회사 정보, 제품군, R&D 방향, AI 훈련 포인트를 함께 정리한 기업소개형 페이지
 
-### 2) 생산·품질 AI 운영 대시보드
+### 2) AI 훈련로드맵 의사결정 대시보드
 
-- 파일: [docs/KGF_manufacturing_ai_dashboard.html](./docs/KGF_manufacturing_ai_dashboard.html)
-- 설명: 품질 데이터, 공정 최적화, 생산계획, 재고 관리, 교육 확산을 한 화면 질문 구조로 보여주는 시안
+- 파일: [docs/KGF_ai_training_roadmap_dashboard.html](./docs/KGF_ai_training_roadmap_dashboard.html)
+- 설명: 보고서의 우선 과제, 부서별 산출물, 90일 실행계획, 보안·성과 측정 기준을 현장 의사결정용으로 보여주는 화면
 
 ### 3) 컨설팅 구성요약
 
@@ -97,15 +97,15 @@
 
 안녕하세요. 케이지에프 AI 훈련컨설팅 검토용 링크 전달드립니다.  
 소개 페이지: https://kclock-boop.github.io/kgf/  
-생산·품질 AI 운영 대시보드: https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html
+AI 훈련로드맵 의사결정 대시보드: https://kclock-boop.github.io/kgf/docs/KGF_ai_training_roadmap_dashboard.html
 
 ### 2) 짧은 1줄 문구
 
-케이지에프 AI 훈련컨설팅 검토용 링크 전달드립니다. 소개 페이지: https://kclock-boop.github.io/kgf/ / 대시보드: https://kclock-boop.github.io/kgf/docs/KGF_manufacturing_ai_dashboard.html
+케이지에프 AI 훈련컨설팅 검토용 링크 전달드립니다. 소개 페이지: https://kclock-boop.github.io/kgf/ / 대시보드: https://kclock-boop.github.io/kgf/docs/KGF_ai_training_roadmap_dashboard.html
 
 ## 비고
 
 - 회사 기본정보는 공식 홈페이지와 사업 참여신청서에서 교차 확인된 항목만 전면에 반영했습니다.
 - 자가진단표는 지시사항이 아니라 `훈련 수요 파악 자료`로만 활용했습니다.
-- 대시보드의 수치와 상태값은 현장 논의를 위한 예시값입니다.
+- 대시보드는 보고서에서 확인된 정성 분석과 실행 기준을 시각화한 것이며, 실제 운영 수치와 시스템 연계 범위는 현장 확인 후 확정합니다.
 - 발표자료 원본은 아직 없어 `ppt` 폴더 구조와 안내문만 먼저 준비했습니다.
